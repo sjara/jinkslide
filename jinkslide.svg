@@ -1,0 +1,2030 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:jinkslide="https://github.com/sjara/jinkslide"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1024"
+   height="768"
+   id="svg6156"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="jinkslide.svg"
+   style="display:inline">
+  <defs
+     id="defs6158">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective6164" />
+    <inkscape:perspective
+       id="perspective7203"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7605"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective7643"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#7f7f7f"
+     borderopacity="1"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="335.57057"
+     inkscape:cy="260.07312"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer3"
+     showgrid="false"
+     inkscape:window-width="1609"
+     inkscape:window-height="1126"
+     inkscape:window-x="537"
+     inkscape:window-y="65"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata6161">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Title"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Helvetica;-inkscape-font-specification:Helvetica Bold"
+       x="511.6875"
+       y="232.91835"
+       id="text7627"><tspan
+         sodipodi:role="line"
+         id="tspan7629"
+         x="511.6875"
+         y="232.91835">Presentation title</tspan></text>
+    <g
+       transform="matrix(0.5,0,0,0.5,-702.87641,407.75539)"
+       jinkslide:lockstate="unlocked"
+       jinkslide:module="core_effect_appear"
+       id="g2976-1-9"
+       style="display:inline;enable-background:new">
+      <rect
+         jinkslide:lockstate="unlocked"
+         style="fill:#888a85;fill-opacity:1;stroke:#4b4b4b;stroke-width:4.44954443;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         ry="25"
+         y="132.46603"
+         x="681.95966"
+         height="289.3367"
+         width="692.07465"
+         id="rect2555-6-3-6"
+         rx="25" />
+      <script
+         sodipodi:insensitive="true"
+         jinkslide:scriptname="JessyInk_effect_appear.js"
+         id="script2977-1">// Copyright 2008, 2009, 2010 Hannes Hochreiner
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+
+function JessyInk_core_effect_appear()
+{
+};
+
+JessyInk_core_effect_appear.prototype.decorateSlides = function (ji)
+{
+	for (var slideCounter in ji.slides)
+	{
+		if (ji.slides[slideCounter].elements.core_effect_appear)
+		{
+			// Process appear effects.
+			for (var effectCounter in ji.slides[slideCounter].elements.core_effect_appear)
+			{
+				var effect = ji.slides[slideCounter].elements.core_effect_appear[effectCounter];
+				
+				if ((effect.parentNode.nodeName === 'g') &amp;&amp; !(effect.parentNode.getAttributeNS(ji.nss.inkscape, 'groupmode') === 'layer' || effect.parentNode.getAttributeNS(ji.nss.jessyink, 'module') === 'core_effect_appear'))
+				{
+					var nds = effect.getElementsByTagNameNS(ji.nss.svg, 'tspan');
+
+					for (var nodeCounter = 0; nodeCounter &lt;  nds.length; nodeCounter++)
+					{
+						if (nds[nodeCounter].getAttributeNS(ji.nss.jessyink, 'core_effect_appear') == 'order')
+						{
+							var order = parseInt(nds[nodeCounter].firstChild.nodeValue);
+						}
+					}
+
+					if (order !== 'undefined' &amp;&amp; !isNaN(order) &amp;&amp; (order &gt; 0))
+					{
+						ji.slides[slideCounter].addEffect(new JessyInkEffectAppear(effect.parentNode, 1), order);
+					}
+				}
+			}
+		}
+
+		if (ji.slides[slideCounter].elements.core_effect_disappear)
+		{
+			// Process disappear effects.
+			for (var effectCounter in ji.slides[slideCounter].elements.core_effect_disappear)
+			{
+				var effect = ji.slides[slideCounter].elements.core_effect_disappear[effectCounter];
+				
+				if ((effect.parentNode.nodeName === 'g') &amp;&amp; !(effect.parentNode.getAttributeNS(ji.nss.inkscape, 'groupmode') === 'layer' || effect.parentNode.getAttributeNS(ji.nss.jessyink, 'module') === 'core_effect_appear'))
+				{
+					var nds = effect.getElementsByTagNameNS(ji.nss.svg, 'tspan');
+
+					for (var nodeCounter = 0; nodeCounter &lt;  nds.length; nodeCounter++)
+					{
+						if (nds[nodeCounter].getAttributeNS(ji.nss.jessyink, 'core_effect_disappear') == 'order')
+						{
+							var order = parseInt(nds[nodeCounter].firstChild.nodeValue);
+						}
+					}
+
+					if (order !== 'undefined' &amp;&amp; !isNaN(order) &amp;&amp; (order &gt; 0))
+					{
+						ji.slides[slideCounter].addEffect(new JessyInkEffectAppear(effect.parentNode, -1), order);
+					}
+				}
+			}
+		}
+	}
+};
+
+function JessyInkEffectAppear(element, direction)
+{
+	this.gElement = element;
+	this.baseDirection = direction;
+
+	return this;
+}
+
+JessyInkEffectAppear.prototype.playEffect = function (dir, time)
+{
+	if ((dir * this.baseDirection) == 1)
+	{
+		this.gElement.style.display = 'inherit';
+		this.gElement.setAttribute('opacity', 1);
+	}
+	else
+	{
+		this.gElement.style.display = 'none';
+		this.gElement.setAttribute('opacity', 0);
+	}
+
+	return true;
+};
+
+if (typeof(JESSYINK) === 'undefined')
+{
+	JESSYINK = new Object();
+}
+
+if (typeof(JESSYINK.modules) === 'undefined')
+{
+	JESSYINK.modules = new Object();
+}
+
+JESSYINK.modules.core_effect_appear = new JessyInk_core_effect_appear();
+
+</script>
+      <rect
+         jinkslide:lockstate="unlocked"
+         style="fill:#c0c0c0;fill-opacity:1;stroke:#4b4b4b;stroke-width:4.42772198;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+         ry="23.430777"
+         y="109.67731"
+         x="662.60327"
+         height="45.407181"
+         width="280.34311"
+         id="rect2555-6-5-4-9"
+         rx="23.430777" />
+      <text
+         sodipodi:insensitive="true"
+         sodipodi:linespacing="125%"
+         id="text3191"
+         y="138.91003"
+         x="682.13605"
+         style="font-size:23.13763237px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif;-inkscape-font-specification:Sans Bold"
+         xml:space="preserve"><tspan
+           sodipodi:insensitive="true"
+           y="138.91003"
+           x="682.13605"
+           id="tspan3193"
+           sodipodi:role="line">appear</tspan></text>
+      <path
+         sodipodi:insensitive="true"
+         transform="matrix(0.69144302,0,0,0.69144302,842.67455,-94.522017)"
+         inkscape:transform-center-y="-0.3451463"
+         inkscape:transform-center-x="1.6450198"
+         d="m -140.8242,439.89413 -19.37925,-4.41216 -14.62103,13.46284 -1.7923,-19.7942 -17.32207,-9.74518 18.27155,-7.82132 3.9154,-19.48569 13.08474,14.96035 19.74192,-2.29764 -10.18474,17.06733 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="1.3106351"
+         sodipodi:arg1="0.68231655"
+         sodipodi:r2="14.964769"
+         sodipodi:r1="29.929539"
+         sodipodi:cy="421.02078"
+         sodipodi:cx="-164.05293"
+         sodipodi:sides="5"
+         id="path4103-0"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5.14812565;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+         sodipodi:type="star" />
+      <text
+         sodipodi:insensitive="true"
+         sodipodi:linespacing="125%"
+         id="text3213"
+         y="208.44905"
+         x="759.61029"
+         style="font-size:23.13763237px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif;-inkscape-font-specification:Sans"
+         xml:space="preserve"><tspan
+           sodipodi:insensitive="true"
+           y="208.44905"
+           x="759.61029"
+           id="tspan3215"
+           sodipodi:role="line">effects</tspan></text>
+      <g
+         jinkslide:lockstate="unlocked"
+         jinkslide:element="core_effect_appear"
+         transform="matrix(1.0032434,0,0,1.0212632,80.147872,128.91486)"
+         id="g2976-3"
+         style="display:inline">
+        <rect
+           jinkslide:lockstate="unlocked"
+           style="fill:#c0c0c0;fill-opacity:1;stroke:#4b4b4b;stroke-width:3.55963564;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           ry="25"
+           y="98.757324"
+           x="662.4046"
+           height="153.28886"
+           width="289.12326"
+           id="rect2555-6-5-43"
+           rx="25" />
+        <path
+           sodipodi:insensitive="true"
+           transform="translate(933.20043,-278.28631)"
+           inkscape:transform-center-y="-0.4991708"
+           inkscape:transform-center-x="2.3791112"
+           d="m -140.8242,439.89413 -19.37925,-4.41216 -14.62103,13.46284 -1.7923,-19.7942 -17.32207,-9.74518 18.27155,-7.82132 3.9154,-19.48569 13.08474,14.96035 19.74192,-2.29764 -10.18474,17.06733 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="false"
+           sodipodi:arg2="1.3106351"
+           sodipodi:arg1="0.68231655"
+           sodipodi:r2="14.964769"
+           sodipodi:r1="29.929539"
+           sodipodi:cy="421.02078"
+           sodipodi:cx="-164.05293"
+           sodipodi:sides="5"
+           id="path4103"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.44954443;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+           sodipodi:type="star" />
+        <path
+           sodipodi:insensitive="true"
+           transform="translate(870.6873,-278.28631)"
+           inkscape:transform-center-y="-0.4991708"
+           inkscape:transform-center-x="2.3791112"
+           d="m -140.8242,439.89413 -19.37925,-4.41216 -14.62103,13.46284 -1.7923,-19.7942 -17.32207,-9.74518 18.27155,-7.82132 3.9154,-19.48569 13.08474,14.96035 19.74192,-2.29764 -10.18474,17.06733 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="false"
+           sodipodi:arg2="1.3106351"
+           sodipodi:arg1="0.68231655"
+           sodipodi:r2="14.964769"
+           sodipodi:r1="29.929539"
+           sodipodi:cy="421.02078"
+           sodipodi:cx="-164.05293"
+           sodipodi:sides="5"
+           id="path4103-4"
+           style="fill:#ffffff;fill-opacity:0.57009343;stroke:#000000;stroke-width:4.44954443;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4.44954461, 8.89908922;stroke-dashoffset:0;display:inline"
+           sodipodi:type="star" />
+        <text
+           sodipodi:insensitive="true"
+           sodipodi:linespacing="125%"
+           id="text3277"
+           y="207.81158"
+           x="709.90259"
+           style="font-size:21.35781479px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:sans-serif;-inkscape-font-specification:Sans"
+           xml:space="preserve"><tspan
+             sodipodi:insensitive="true"
+             y="207.81158"
+             x="709.90259"
+             id="tspan3279"
+             sodipodi:role="line">order number:</tspan></text>
+        <text
+           jinkslide:lockstate="unlocked"
+           sodipodi:linespacing="125%"
+           id="text3281"
+           y="207.81158"
+           x="890.69647"
+           style="font-size:21.35781479px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:sans-serif;-inkscape-font-specification:Sans"
+           xml:space="preserve"><tspan
+             jinkslide:lockstate="unlocked"
+             jinkslide:core_effect_appear="order"
+             y="207.81158"
+             x="890.69647"
+             id="tspan3283"
+             sodipodi:role="line"
+             style="font-size:39.51736832px">1</tspan></text>
+        <text
+           sodipodi:insensitive="true"
+           sodipodi:linespacing="125%"
+           id="text3277-1"
+           y="151.08044"
+           x="837.58252"
+           style="font-size:17.79817772px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:sans-serif;-inkscape-font-specification:Sans Bold"
+           xml:space="preserve"><tspan
+             sodipodi:insensitive="true"
+             y="151.08044"
+             x="837.58252"
+             id="tspan3279-6"
+             sodipodi:role="line">appear</tspan></text>
+        <text
+           sodipodi:insensitive="true"
+           sodipodi:linespacing="125%"
+           id="text3277-8-1"
+           y="239.61955"
+           x="936.5697"
+           style="font-size:16.01836014px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:sans-serif;-inkscape-font-specification:Sans"
+           xml:space="preserve"><tspan
+             sodipodi:insensitive="true"
+             jinkslide:version="version"
+             y="239.61955"
+             x="936.5697"
+             id="tspan3279-37-6"
+             sodipodi:role="line">2.0.0-alpha-1</tspan></text>
+      </g>
+      <g
+         jinkslide:lockstate="unlocked"
+         jinkslide:element="core_effect_disappear"
+         transform="translate(398.87589,134.31202)"
+         id="g2976-3-3"
+         style="display:inline">
+        <rect
+           jinkslide:lockstate="unlocked"
+           style="fill:#c0c0c0;fill-opacity:1;stroke:#4b4b4b;stroke-width:3.60351014;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           ry="25"
+           y="95.444153"
+           x="662.42651"
+           height="156.58009"
+           width="290.06644"
+           id="rect2555-6-5-43-48"
+           rx="25" />
+        <path
+           sodipodi:insensitive="true"
+           transform="translate(933.20006,-278.28631)"
+           inkscape:transform-center-y="-0.4991708"
+           inkscape:transform-center-x="2.3791112"
+           d="m -140.8242,439.89413 -19.37925,-4.41216 -14.62103,13.46284 -1.7923,-19.7942 -17.32207,-9.74518 18.27155,-7.82132 3.9154,-19.48569 13.08474,14.96035 19.74192,-2.29764 -10.18474,17.06733 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="false"
+           sodipodi:arg2="1.3106351"
+           sodipodi:arg1="0.68231655"
+           sodipodi:r2="14.964769"
+           sodipodi:r1="29.929539"
+           sodipodi:cy="421.02078"
+           sodipodi:cx="-164.05293"
+           sodipodi:sides="5"
+           id="path4103-4-2"
+           style="fill:#ffffff;fill-opacity:0.57009343;stroke:#000000;stroke-width:4.44954443;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4.44954461, 8.89908922;stroke-dashoffset:0;display:inline"
+           sodipodi:type="star" />
+        <path
+           sodipodi:insensitive="true"
+           transform="translate(870.68706,-278.28631)"
+           inkscape:transform-center-y="-0.4991708"
+           inkscape:transform-center-x="2.3791112"
+           d="m -140.8242,439.89413 -19.37925,-4.41216 -14.62103,13.46284 -1.7923,-19.7942 -17.32207,-9.74518 18.27155,-7.82132 3.9154,-19.48569 13.08474,14.96035 19.74192,-2.29764 -10.18474,17.06733 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="false"
+           sodipodi:arg2="1.3106351"
+           sodipodi:arg1="0.68231655"
+           sodipodi:r2="14.964769"
+           sodipodi:r1="29.929539"
+           sodipodi:cy="421.02078"
+           sodipodi:cx="-164.05293"
+           sodipodi:sides="5"
+           id="path4103-1"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.44954443;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
+           sodipodi:type="star" />
+        <text
+           sodipodi:insensitive="true"
+           sodipodi:linespacing="125%"
+           id="text3277-9"
+           y="207.81158"
+           x="709.90259"
+           style="font-size:21.35781479px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:sans-serif;-inkscape-font-specification:Sans"
+           xml:space="preserve"><tspan
+             sodipodi:insensitive="true"
+             y="207.81158"
+             x="709.90259"
+             id="tspan3279-3"
+             sodipodi:role="line">order number:</tspan></text>
+        <text
+           jinkslide:lockstate="unlocked"
+           sodipodi:linespacing="125%"
+           id="text3281-9"
+           y="207.81158"
+           x="890.69647"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:sans-serif;-inkscape-font-specification:Sans"
+           xml:space="preserve"><tspan
+             jinkslide:lockstate="unlocked"
+             jinkslide:core_effect_disappear="order"
+             y="207.81158"
+             x="890.69647"
+             id="tspan3283-0"
+             sodipodi:role="line">1</tspan></text>
+        <text
+           sodipodi:insensitive="true"
+           sodipodi:linespacing="125%"
+           id="text3277-1-8"
+           y="151.08044"
+           x="817.58252"
+           style="font-size:17.79817772px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:sans-serif;-inkscape-font-specification:Sans Bold"
+           xml:space="preserve"><tspan
+             sodipodi:insensitive="true"
+             y="151.08044"
+             x="817.58252"
+             id="tspan3279-6-8"
+             sodipodi:role="line">disappear</tspan></text>
+        <text
+           sodipodi:insensitive="true"
+           sodipodi:linespacing="125%"
+           id="text3277-8-1-5"
+           y="239.61955"
+           x="936.5697"
+           style="font-size:16.01836014px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:sans-serif;-inkscape-font-specification:Sans"
+           xml:space="preserve"><tspan
+             sodipodi:insensitive="true"
+             jinkslide:version="version"
+             y="239.61955"
+             x="936.5697"
+             id="tspan3279-37-6-09"
+             sodipodi:role="line">2.0.0-alpha-1</tspan></text>
+      </g>
+      <text
+         sodipodi:insensitive="true"
+         sodipodi:linespacing="125%"
+         id="text3277-8-1-5-9-9-4"
+         y="413.22476"
+         x="1355.8662"
+         style="font-size:16.01836014px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:sans-serif;-inkscape-font-specification:Sans"
+         xml:space="preserve"><tspan
+           sodipodi:insensitive="true"
+           jinkslide:version="version"
+           y="413.22476"
+           x="1355.8662"
+           id="tspan3279-37-6-09-1-1-2"
+           sodipodi:role="line">2.0.0-alpha-1</tspan></text>
+    </g>
+    <g
+       style="display:inline;enable-background:new"
+       id="g3339"
+       transform="translate(-415.40235,493.07477)"
+       jinkslide:lockstate="unlocked"
+       jinkslide:module="core_main">
+      <rect
+         style="fill:#c0c0c0;fill-opacity:1;stroke:#4b4b4b;stroke-width:5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         ry="29.763779"
+         y="151.65353"
+         x="143.03738"
+         height="126.14173"
+         width="255.1181"
+         id="rect2555"
+         rx="29.763779"
+         jinkslide:lockstate="unlocked" />
+      <script
+         id="script68"
+         jinkslide:scriptname="jinkslide_main.js"
+         sodipodi:insensitive="true">// 
+//
+// Copyright 2012 Santiago Jaramillo
+// Copyright 2008, 2009, 2010 Hannes Hochreiner
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+
+function Slide(groupElement, clipPathId, slideBackgroundId)
+{
+	// States.
+	this.STATE_START = -1;
+	this.STATE_END = -2;
+
+	// Namespaces.
+	this.nss = {	'sodipodi':'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd',
+		'cc':'http://web.resource.org/cc/',
+		'svg':'http://www.w3.org/2000/svg',
+		'dc':'http://purl.org/dc/elements/1.1/',
+		'rdf':'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+		'inkscape':'http://www.inkscape.org/namespaces/inkscape',
+		'xlink':'http://www.w3.org/1999/xlink',
+		'xml':'http://www.w3.org/XML/1998/namespace',
+		'jessyink':'https://launchpad.net/jessyink'};
+	this.elements = new Object();
+	this.origGElement = groupElement;
+	this.gElement = this.removeModulesAndIds(this.origGElement.cloneNode(true));
+	this.viewGroup = document.createElementNS(this.nss.svg, 'g');
+	this.transformGroup = document.createElementNS(this.nss.svg, 'g');
+	this.initialView = null;
+	this.init(clipPathId, slideBackgroundId);
+	this.effects = new Array();
+	this.effectIndices = new Array();
+
+	return this;
+}
+
+Slide.prototype.init = function(clipPathId, slideBackgroundId)
+{
+	// Set clip-path.
+	this.gElement.setAttribute('clip-path', 'url(#' + clipPathId + ')');
+
+	// Set background.
+	var useNode = document.createElementNS(this.nss.svg, 'use');
+
+	useNode.setAttributeNS(this.nss.xlink, 'href', '#' + slideBackgroundId);
+	this.gElement.insertBefore(useNode, this.gElement.firstChild);
+	
+	// Add content to transform group.
+	while (this.gElement.firstChild)
+	{
+		this.transformGroup.appendChild(this.gElement.firstChild);
+	}
+
+	// Transfer the transform attribute from the node to the transform group.
+	if (this.gElement.getAttribute('transform'))
+	{
+		this.transformGroup.setAttribute('transform', this.gElement.getAttribute('transform'));
+		this.gElement.removeAttribute('transform');
+	}
+
+	this.viewGroup.appendChild(this.transformGroup);
+
+	var matrixOld = (new matrixSVG()).fromElements(1, 0, 0, 0, 1, 0, 0, 0, 1);
+
+	// Set initial view.
+	this.viewGroup.setAttribute('transform', matrixOld.toAttribute());
+	this.initialView = { getMatrix: function() { return matrixOld; } };
+
+	this.gElement.appendChild(this.viewGroup);
+};
+
+Slide.prototype.removeModulesAndIds = function(node)
+{
+	var nodesToBeRemoved = [];
+
+	for (var nodeCounter in node.childNodes)
+	{
+		var n = node.childNodes[nodeCounter];
+
+		if ((n !== undefined) &amp;&amp; (n.nodeType === 1))
+		{
+			if (n.getAttribute('id'))
+			{
+				n.removeAttribute('id');
+			}
+
+			if (n.getAttributeNS(this.nss.jessyink, 'module'))
+			{
+				nodesToBeRemoved.push(n);
+			}
+
+			if (n.getAttributeNS(this.nss.jessyink, 'element'))
+			{
+				var cat = n.getAttributeNS(this.nss.jessyink, 'element');
+
+				// Hide element.
+				n.style.display = 'none';
+
+				if (!this.elements[cat])
+				{
+					this.elements[cat] = new Array();
+				}
+
+				this.elements[cat].push(n);
+			}
+
+			if (n.childNodes.length &gt; 0)
+			{
+				this.removeModulesAndIds(n);
+			}
+		}
+	}
+
+	while (nodesToBeRemoved.length &gt; 0)
+	{
+		var nd = nodesToBeRemoved.pop();
+
+		nd.parentNode.removeChild(nd);
+	}
+
+	node.removeAttribute('id');
+
+	return node;
+};
+
+Slide.prototype.hide = function(keepInTree)
+{
+	this.gElement.setAttribute('opacity',0);
+
+	if (keepInTree)
+	{
+		this.gElement.style.display = 'inherit';
+	}
+	else
+	{
+		this.gElement.style.display = 'none';
+	}
+};
+
+Slide.prototype.show = function()
+{
+	this.gElement.setAttribute('opacity',1.0);
+	this.gElement.style.display = 'inherit';
+};
+
+Slide.prototype.getGElement = function()
+{
+	return this.gElement;
+};
+
+Slide.prototype.addEffect = function(effect, index)
+{
+	if (!((index &gt; 0) &amp;&amp; (effect.playEffect)))
+		return;
+
+	if (this.effects[index] == undefined)
+	{
+		this.effects[index] = new Object();
+	}
+
+	if (this.effects[index].effects == undefined)
+	{
+		this.effects[index].effects = new Array();
+	}
+
+	this.effects[index].effects.push(effect);
+
+	this.updateIndices();
+};
+
+Slide.prototype.setView = function(view, index)
+{
+	if (!(index &gt;= 0 &amp;&amp; view.playEffect &amp;&amp; view.getMatrix))
+		return;
+
+	if (index == 0)
+	{
+		this.initialView = view;
+		return;
+	}
+
+	if (this.effects[index] == undefined)
+	{
+		this.effects[index] = new Object();
+	}
+
+	this.effects[index].view = view;
+
+	this.updateIndices();
+};
+
+Slide.prototype.updateIndices = function()
+{
+	this.effectIndices = new Array();
+
+	for (var elem in this.effects)
+	{
+		this.effectIndices.push(elem);
+	}
+};
+
+Slide.prototype.getEffectsAtIndex = function(index)
+{
+	var outArray = new Array();
+
+	for (var effCounter in this.effects[this.effectIndices[index]].effects)
+	{
+		outArray.push(this.effects[this.effectIndices[index]].effects[effCounter]);
+	}
+
+	if (this.effects[this.effectIndices[index]].view)
+	{
+		outArray.push(this.effects[this.effectIndices[index]].view);
+	}
+
+	return outArray;
+};
+
+Slide.prototype.getPreviousView = function(order)
+{
+	for (var indexCounter in this.effectIndices)
+	{
+		if (this.effectIndices[indexCounter] == order)
+			var index = indexCounter;
+	}
+
+	var outView = null;
+
+	for (var counter = index - 1; counter &gt;= 0 &amp;&amp; outView == null; counter--)
+	{
+		outView = this.effects[this.effectIndices[counter]].view;
+	}
+
+	if (outView == null)
+		outView = this.initialView;
+
+	return outView;
+};
+
+Slide.prototype.getEffectIndexCount = function()
+{
+	return this.effectIndices.length;
+};
+
+Slide.prototype.setToState = function(state)
+{	
+	this.viewGroup.setAttribute('transform', this.initialView.getMatrix().toAttribute());
+
+	if (this.getEffectIndexCount() &gt; 0)
+	{
+		if (state == this.STATE_END)
+		{
+			for (var counter = 0; counter &lt; this.getEffectIndexCount(); counter++)
+			{
+				for (var subCounter = 0; subCounter &lt; this.getEffectsAtIndex(counter).length; subCounter++)
+				{
+					this.getEffectsAtIndex(counter)[subCounter].playEffect(1, this.STATE_END);
+				}
+			}
+		}
+		else if (state == this.STATE_START)
+		{
+			for (var counter = this.getEffectIndexCount() - 1; counter &gt;= 0; counter--)
+			{
+				for (var subCounter = 0; subCounter &lt; this.getEffectsAtIndex(counter).length; subCounter++)
+				{
+					this.getEffectsAtIndex(counter)[subCounter].playEffect(-1, this.STATE_START);
+				}
+			}
+		}
+		else
+		{
+			setSlideToState(slide, this.STATE_START);
+		}
+	}
+};
+
+function JessyInkEffectAppear(element, direction)
+{
+	this.gElement = element;
+	this.baseDirection = direction;
+
+	return this;
+}
+
+JessyInkEffectAppear.prototype.playEffect = function (dir, time)
+{
+	if ((dir * this.baseDirection) == 1)
+	{
+		this.gElement.style.display = 'inherit';
+		this.gElement.setAttribute('opacity', 1);
+	}
+	else
+	{
+		this.gElement.style.display = 'none';
+		this.gElement.setAttribute('opacity', 0);
+	}
+
+	return true;
+};
+
+/** Main JessyInk class.
+*/
+function JessyInk()
+{
+	this.nss = {	'sodipodi':'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd',
+		'cc':'http://web.resource.org/cc/',
+		'svg':'http://www.w3.org/2000/svg',
+		'dc':'http://purl.org/dc/elements/1.1/',
+		'rdf':'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+		'inkscape':'http://www.inkscape.org/namespaces/inkscape',
+		'xlink':'http://www.w3.org/1999/xlink',
+		'xml':'http://www.w3.org/XML/1998/namespace',
+		'jessyink':'https://launchpad.net/jessyink'};
+	this.rootNode = document.getElementsByTagNameNS(this.nss.svg, 'svg')[0];
+	this.width;
+	this.height;
+	this.bgColor;
+	this.slides = [];
+	this.currentMode = 'core_slide';
+	this.activeSlide = 0;
+	this.activeEffect = 0;
+	this.effectArray = [];
+	this.timeStep = 30; // 40 ms equal 25 frames per second.
+	this.lastFrameTime = null;
+	this.processingEffect = false;
+	this.transCounter = 0;
+	this.presentationLayer = null;
+	this.indexColumns = 4;
+
+	// Keycodes.
+	this.LEFT_KEY = 37; // cursor left keycode
+	this.UP_KEY = 38; // cursor up keycode
+	this.RIGHT_KEY = 39; // cursor right keycode
+	this.DOWN_KEY = 40; // cursor down keycode
+	this.PAGE_UP_KEY = 33; // page up keycode
+	this.PAGE_DOWN_KEY = 34; // page down keycode
+	this.HOME_KEY = 36; // home keycode
+	this.END_KEY = 35; // end keycode
+	this.ENTER_KEY = 13; // enter keycode
+	this.SPACE_KEY = 32; // space keycode
+
+	// Mouse handler actions.
+	this.MOUSE_UP = 1;
+	this.MOUSE_DOWN = 2;
+	this.MOUSE_MOVE = 3;
+	this.MOUSE_WHEEL = 4;
+
+	// States.
+	this.STATE_START = -1;
+	this.STATE_END = -2;
+
+	// Initialise char and key code dictionaries.
+	this.charCodeDictionary = this.getDefaultCharCodeDictionary();
+	this.keyCodeDictionary = this.getDefaultKeyCodeDictionary();
+
+	// Initialise mouse handler dictionary.
+	this.mouseHandlerDictionary = this.getDefaultMouseHandlerDictionary();
+
+	return this;
+}
+
+/** Private function to make the presentation scale.
+ *
+ * The function gets the width and height of the presentation either from the
+ * viewbox or the width and height attributes of the root node and saves them
+ * in the fields 'width' and 'height'. Afterwards, it sets the viewbox
+ * attribute, if needed, and changes the width and height attributes of the
+ * root node to 100%.
+ */
+JessyInk.prototype.setAutoScale = function()
+{
+	if (this.rootNode.getAttribute('viewBox'))
+	{
+		this.width = this.rootNode.viewBox.animVal.width;
+		this.height = this.rootNode.viewBox.animVal.height;
+	}
+	else
+	{
+		this.width = parseFloat(this.rootNode.getAttribute('width'));
+		this.height = parseFloat(this.rootNode.getAttribute('height'));
+		this.rootNode.setAttribute('viewBox', '0 0 ' + this.width + ' ' + this.height);
+	}
+
+	this.rootNode.setAttribute('width', '100%');
+	this.rootNode.setAttribute('height', '100%');
+};
+
+/** Private function to set the background color.
+ *
+ * The function determines the background color from the sodipodi setting and
+ * applies it to the root node. It also saves the color in the field
+ * 'bgColor' for later use with the slides.
+ */
+JessyInk.prototype.setBackgroundColor = function()
+{
+	// Setting the background color.
+	var namedViews = document.getElementsByTagNameNS(this.nss.sodipodi, 'namedview');
+
+	for (var counter = 0; counter &lt; namedViews.length; counter++)
+	{
+		if (namedViews[counter].hasAttribute('id') &amp;&amp; namedViews[counter].hasAttribute('pagecolor'))
+		{
+			if (namedViews[counter].getAttribute('id') == 'base')
+			{
+				this.bgColor = namedViews[counter].getAttribute('pagecolor');
+				var newAttribute = 'background-color:' + this.bgColor + ';';
+
+				if (this.rootNode.hasAttribute('style'))
+					newAttribute += this.rootNode.getAttribute('style');
+
+				this.rootNode.setAttribute('style', newAttribute);
+			}
+		}
+	}
+};
+
+/** Private function this removes the old JessyInk layer, if present.
+*/
+JessyInk.prototype.removeJessyInkLayer = function()
+{
+	// Delete existing JessyInk presentation layer.
+	var oldLayer = document.getElementById('jessyInkPresentationLayer');
+
+	if (oldLayer)
+	{
+		oldLayer.parentNode.removeChild(oldLayer);
+	}
+}
+
+/** Private function to hide all elements that are direct children of the
+ * root node.
+ *
+ * The function tries to hide any visual objects this maybe present as
+ * children of the root node. This is done to avoid any interference with the
+ * presentation and to limit the number of elements this need to be drawn.
+ */
+JessyInk.prototype.hideEverything = function()
+{
+	for (nodeNumber in this.rootNode.childNodes)
+	{
+		var nodeName = this.rootNode.childNodes[nodeNumber].nodeName;
+
+		if (nodeName !== undefined)
+		{
+			var elementsToBeHidden = ['text', 'tspan', 'tref', 'rect', 'circle', 'ellipse', 'line', 'polyline', 'polygon', 'path', 'g'];
+			var found = false;
+
+			for (var elementCounter = 0; elementCounter &lt; elementsToBeHidden.length &amp;&amp; !found; elementCounter++)
+			{
+				if (nodeName === elementsToBeHidden[elementCounter])
+				{
+					found = true;
+				}
+			}
+
+			if (found)
+			{
+				this.rootNode.childNodes[nodeNumber].style.display = 'none';
+			}
+		}
+	}
+};
+
+/** Private function for creating a new JessyInk layer.
+*/
+JessyInk.prototype.makeJessyInkLayer = function()
+{
+	var JessyInkPresentationLayer = document.createElementNS(this.nss.svg, 'g');
+
+	JessyInkPresentationLayer.setAttributeNS(this.nss.inkscape, 'groupmode', 'layer');
+	JessyInkPresentationLayer.setAttributeNS(this.nss.inkscape, 'label', 'JessyInk Presentation Layer');
+	JessyInkPresentationLayer.setAttributeNS(this.nss.jessyink, 'presentationLayer', 'presentationLayer');
+	JessyInkPresentationLayer.setAttribute('id', 'jessyInkPresentationLayer');
+	JessyInkPresentationLayer.setAttribute('opacity', 1);
+	JessyInkPresentationLayer.style.display = 'inherit';
+
+	this.presentationLayer = this.rootNode.appendChild(JessyInkPresentationLayer);
+}
+
+/** Private function to define a clip path for the slides.
+ *
+ * The function first deletes the old clip path, if present, and then creates
+ * a new one.
+ */
+JessyInk.prototype.defineClipPath = function()
+{
+	// Delete existing clip path.
+	var oldClipPath = document.getElementById('jessyInkSlideClipPath');
+
+	if (oldClipPath)
+	{
+		oldClipPath.parentNode.removeChild(oldClipPath);
+	}
+
+	// Find or create a defs node.
+	var defsNode;
+	var defsNodes = document.getElementsByTagNameNS(this.nss.svg, 'defs');
+
+	if (defsNodes.length &gt; 0)
+	{
+		defsNode = defsNodes[0];
+	}
+	else
+	{
+		defsNode = document.createElementNS(this.nss.svg, 'defs');
+		this.rootNode.appendChild(defNode);
+	}
+
+	// Create clip path.
+	var rectNode = document.createElementNS(this.nss.svg, 'rect');
+	var clipPath = document.createElementNS(this.nss.svg, 'clipPath');
+
+	rectNode.setAttribute('x', 0);
+	rectNode.setAttribute('y', 0);
+	rectNode.setAttribute('width', this.width);
+	rectNode.setAttribute('height', this.height);
+
+	clipPath.setAttribute('id', 'jessyInkSlideClipPath');
+	clipPath.setAttribute('clipPathUnits', 'userSpaceOnUse');
+
+	clipPath.appendChild(rectNode);
+
+	// Append clip path to defs node.
+	defsNode.appendChild(clipPath);
+};
+
+/** Private function to define a background layer.
+ *
+ * The function first delets the old definition, if present, and then creates
+ * a new one.
+ */
+JessyInk.prototype.defineBackground = function()
+{
+	// Delete existing background.
+	var background = document.getElementById('jessyInkSlideBackground');
+
+	if (background)
+	{
+		background.parentNode.removeChild(background);
+	}
+
+	// Find or create a defs node.
+	var defsNode;
+	var defsNodes = document.getElementsByTagNameNS(this.nss.svg, 'defs');
+
+	if (defsNodes.length &gt; 0)
+	{
+		defsNode = defsNodes[0];
+	}
+	else
+	{
+		defsNode = document.createElementNS(this.nss.svg, 'defs');
+		this.rootNode.appendChild(defNode);
+	}
+
+	// Create clip path.
+	var rectNode = document.createElementNS(this.nss.svg, 'rect');
+
+	rectNode.setAttribute('x', 0);
+	rectNode.setAttribute('y', 0);
+	rectNode.setAttribute('width', this.width);
+	rectNode.setAttribute('height', this.height);
+	rectNode.setAttribute('id', 'jessyInkBackground');
+	rectNode.setAttribute('fill', this.bgColor);
+
+	// Append clip path to defs node.
+	defsNode.appendChild(rectNode);
+};
+
+/** Private function to collect all the slides.
+*/
+JessyInk.prototype.getSlides = function()
+{
+	for (nodeNumber in this.rootNode.childNodes)
+	{
+		var nd = this.rootNode.childNodes[nodeNumber];
+
+		if ((nd !== undefined) &amp;&amp; (nd.nodeType === 1))
+		{
+			if ((nd.nodeName === 'g') &amp;&amp; (nd.getAttributeNS(this.nss.inkscape, 'groupmode')) &amp;&amp; (nd.getAttributeNS(this.nss.inkscape, 'groupmode') === 'layer') &amp;&amp; (nd.getAttributeNS(this.nss.jessyink, 'presentationLayer') != 'presentationLayer'))
+			{
+				var tmpSlide = new Slide(this.rootNode.childNodes[nodeNumber], 'jessyInkSlideClipPath', 'jessyInkSlideBackground');
+				tmpSlide.hide(true);
+				this.slides.push(tmpSlide);
+
+				document.getElementById('jessyInkPresentationLayer').appendChild(this.slides[this.slides.length - 1].getGElement());
+			}
+		}
+	}
+};
+
+JessyInk.prototype.callSlideChangingExtensions = function()
+{
+	for (module in JESSYINK.modules)
+	{
+		if (JESSYINK.modules[module].changeSlides)
+		{
+			JESSYINK.modules[module].changeSlides(this);
+		}
+	}
+};
+
+JessyInk.prototype.callSlideDecoratingExtensions = function()
+{
+	for (module in JESSYINK.modules)
+	{
+		if (JESSYINK.modules[module].decorateSlides)
+		{
+			JESSYINK.modules[module].decorateSlides(this);
+		}
+	}
+};
+
+JessyInk.prototype.initModules = function()
+{
+	for (module in JESSYINK.modules)
+	{
+		if (JESSYINK.modules[module].init)
+		{
+			JESSYINK.modules[module].init(this);
+		}
+	}
+};
+
+JessyInk.prototype.initPresentation = function()
+{
+	for (var slide in this.slides)
+	{
+		this.slides[slide].hide(false);
+	}
+
+	var slideFromURL;
+	var hashFromURL = window.location.hash;
+	if (hashFromURL=='')
+	{
+	    slideFromURL = 1;
+	}
+	else
+	{
+	    slideFromURL = parseInt(window.location.hash.substring(1).split('_')[0]);
+	}
+	// FIXME: when reloading it open next slide. See slideSetActiveSlide()
+	// FIXED: slideFromURL starts at 1. JS arrays start at 0.
+	this.slideSetActiveSlide(slideFromURL-1);
+
+	// FIXME: the following code produces the same bug
+	//this.activeSlide = slideFromURL;
+	//this.slides[this.activeSlide].setToState(this.STATE_START);
+	//this.slides[this.activeSlide].show();
+};
+
+/** Function to dispatch the next effect, if there is none left, change the slide.
+ *
+ *  @param dir direction of the change (1 = forwards, -1 = backwards)
+ */
+JessyInk.prototype.dispatchEffects = function(dir)
+{
+	if (this.slides[this.activeSlide].effects &amp;&amp; (((dir == 1) &amp;&amp; (this.activeEffect &lt; this.slides[this.activeSlide].getEffectIndexCount())) || ((dir == -1) &amp;&amp; (this.activeEffect &gt; 0))))
+	{
+		this.processingEffect = true;
+
+		if (dir == 1)
+		{
+			this.effectArray = this.slides[this.activeSlide].getEffectsAtIndex(this.activeEffect);
+			this.activeEffect += dir;
+		}
+		else if (dir == -1)
+		{
+			this.activeEffect += dir;
+			this.effectArray = this.slides[this.activeSlide].getEffectsAtIndex(this.activeEffect);
+		}
+
+		this.transCounter = 0;
+		this.startTime = (new Date()).getTime();
+		this.lastFrameTime = null;
+		this.playEffects(dir);
+	}
+	else if (((dir == 1) &amp;&amp; (this.activeSlide &lt; (this.slides.length - 1))) || (((dir == -1) &amp;&amp; (this.activeSlide &gt; 0))))
+	{
+		this.changeSlide(dir);
+	}
+};
+
+/** Function to change between slides.
+ *
+ *  @param dir direction (1 = forwards, -1 = backwards)
+ */
+JessyInk.prototype.changeSlide = function(dir)
+{
+	this.processingEffect = true;
+	this.effectArray = new Array();
+
+	// Create the effect array. If transitions are set for the slide use them,
+	// if not create appear effects.
+	if (dir == 1)
+	{
+		if (this.slides[this.activeSlide].transitionOut)
+		{
+			this.effectArray[0] = this.slides[this.activeSlide].transitionOut;
+		}
+		else
+		{
+			this.effectArray[0] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), -1);
+		}
+	}
+	else if (dir == -1)
+	{
+		if (this.slides[this.activeSlide].transitionIn)
+		{
+			this.effectArray[0] = this.slides[this.activeSlide].transitionIn;
+		}
+		else
+		{
+			this.effectArray[0] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), 1);
+		}
+	}
+
+	this.activeSlide += dir;
+
+	if (dir == 1)
+	{
+		if (this.slides[this.activeSlide].transitionIn)
+		{
+			this.effectArray[1] = this.slides[this.activeSlide].transitionIn;
+		}
+		else
+		{
+			this.effectArray[1] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), 1);
+		}
+	}
+	else if (dir == -1)
+	{
+		if (this.slides[this.activeSlide].transitionOut)
+		{
+			this.effectArray[1] = this.slides[this.activeSlide].transitionOut;
+		}
+		else
+		{
+			this.effectArray[1] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), -1);
+		}
+	}
+
+	if (this.slides[this.activeSlide].effects &amp;&amp; (dir == -1))
+		this.activeEffect = this.slides[this.activeSlide].getEffectIndexCount();
+	else
+		this.activeEffect = 0;
+
+	if (dir == -1)
+		this.slides[this.activeSlide].setToState(this.STATE_END);
+	else
+		this.slides[this.activeSlide].setToState(this.STATE_START);
+
+	this.transCounter = 0;
+	this.startTime = (new Date()).getTime();
+	this.lastFrameTime = null;
+	this.playEffects(dir);
+};
+
+/** Function to play an effect.
+ *
+ *  @param dir direction in which to play the effect (1 = forwards, -1 = backwards)
+ */
+JessyInk.prototype.playEffects = function(dir)
+{
+	var done = true;
+	var suspendHandle = this.rootNode.suspendRedraw(200);
+
+	for (var counter = 0; counter &lt; this.effectArray.length; counter++)
+	{
+		done &amp;= this.effectArray[counter].playEffect(dir, this.transCounter);
+	}
+
+	this.rootNode.unsuspendRedraw(suspendHandle);
+	this.rootNode.forceRedraw();
+
+	if (!done)
+	{
+		var currentTime = (new Date()).getTime();
+		var timeDiff = 1;
+
+		this.transCounter = currentTime - this.startTime;
+
+		if (this.lastFrameTime != null)
+		{
+			timeDiff = this.timeStep - (currentTime - this.lastFrameTime);
+
+			if (timeDiff &lt;= 0)
+				timeDiff = 1;
+		}
+
+		this.lastFrameTime = currentTime;
+
+		var that = this;
+
+		window.setTimeout(function() { that.playEffects(dir); }, timeDiff);
+	}
+	else
+	{
+		window.location.hash = (this.activeSlide + 1) + '_' + this.activeEffect;
+		this.processingEffect = false;
+	}
+};
+
+/** Event handler for key press.
+ *
+ *  @param e the event
+ */
+JessyInk.prototype.keydown = function (e)
+{
+	var that = this;
+
+	if (!e)
+		e = window.event;
+
+	code = e.keyCode || e.charCode;
+	//console.log(this.keyCodeDictionary[this.currentMode][code]) //DEBUG
+	if (!this.processingEffect &amp;&amp; this.keyCodeDictionary[this.currentMode] &amp;&amp; this.keyCodeDictionary[this.currentMode][code])
+		this.keyCodeDictionary[this.currentMode][code]();
+	else
+		document.onkeypress = function(e) { that.keypress(e); };
+};
+
+/** Event handler for key press.
+ *
+ *  @param e the event
+ */
+JessyInk.prototype.keypress = function (e)
+{
+	document.onkeypress = null;
+
+	if (!e)
+		e = window.event;
+
+	str = String.fromCharCode(e.keyCode || e.charCode);
+
+	if (!this.processingEffect &amp;&amp; this.charCodeDictionary[this.currentMode] &amp;&amp; this.charCodeDictionary[this.currentMode][str])
+		this.charCodeDictionary[this.currentMode][str]();
+};
+
+/** Function to supply the default char code dictionary.
+ *
+ * @returns default char code dictionary
+ */
+JessyInk.prototype.getDefaultCharCodeDictionary = function()
+{
+	var that = this;
+	var charCodeDict = new Object();
+
+	charCodeDict.core_slide = new Object();
+	charCodeDict.core_slide['i'] = function () { that.toggleSlideIndex(); };
+	charCodeDict.core_slide['d'] = function () { that.slideSwitchToDrawingMode(); };
+	charCodeDict.core_slide['D'] = function () { that.slideQueryDuration(); };
+	charCodeDict.core_slide['n'] = function () { that.slideAddSlide(activeSlide); };
+	charCodeDict.core_slide['p'] = function () { that.slideToggleProgressBarVisibility(); };
+	charCodeDict.core_slide['t'] = function () { that.slideResetTimer(); };
+	charCodeDict.core_slide['e'] = function () { that.slideUpdateExportLayer(); };
+
+	charCodeDict.slide_index = new Object();
+	charCodeDict.slide_index['i'] = function () { that.toggleSlideIndex(); };
+	charCodeDict.slide_index['='] = function () { that.changeIndexColNumber(-1); };
+	charCodeDict.slide_index['+'] = function () { that.changeIndexColNumber(-1); };
+	charCodeDict.slide_index['-'] = function () { that.changeIndexColNumber(1); };
+
+	return charCodeDict;
+};
+
+/** Function to supply the default key code dictionary.
+ *
+ * @returns default key code dictionary
+ */
+JessyInk.prototype.getDefaultKeyCodeDictionary = function()
+{
+	var that = this;
+	var keyCodeDict = new Object();
+
+	keyCodeDict.core_slide = new Object();
+	keyCodeDict.core_slide[this.LEFT_KEY] = function() { that.dispatchEffects(-1); };
+	keyCodeDict.core_slide[this.RIGHT_KEY] = function() { that.dispatchEffects(1); };
+	keyCodeDict.core_slide[this.UP_KEY] = function() { that.skipEffects(-1); };
+	keyCodeDict.core_slide[this.DOWN_KEY] = function() { that.skipEffects(1); };
+	keyCodeDict.core_slide[this.PAGE_UP_KEY] = function() { that.dispatchEffects(-1); };
+	keyCodeDict.core_slide[this.PAGE_DOWN_KEY] = function() { that.dispatchEffects(1); };
+	keyCodeDict.core_slide[this.HOME_KEY] = function() { that.slideSetActiveSlide(0); };
+	keyCodeDict.core_slide[this.END_KEY] = function() { that.slideSetActiveSlide(that.slides.length - 1); };
+	keyCodeDict.core_slide[this.SPACE_KEY] = function() { that.dispatchEffects(1); };
+
+	keyCodeDict.slide_index = new Object();
+	keyCodeDict.slide_index[this.RIGHT_KEY] = function() { that.indexSetActiveSlide(that.activeSlide+1); };
+	keyCodeDict.slide_index[this.LEFT_KEY] = function() { that.indexSetActiveSlide(that.activeSlide-1); };
+	keyCodeDict.slide_index[this.ENTER_KEY] = function () { that.toggleSlideIndex(); };
+	keyCodeDict.slide_index[this.UP_KEY] = function() { that.nextRowInIndex(-1); };
+	keyCodeDict.slide_index[this.DOWN_KEY] = function() { that.nextRowInIndex(1); };
+
+	return keyCodeDict;
+};
+
+
+/*****************************************************************************/
+/*****************************************************************************/
+
+/** Activate slide from next/previous row in index
+ *
+ *  @param dir
+ *
+ *  Added by Santiago Jaramillo - 2012-02-01
+ */
+JessyInk.prototype.nextRowInIndex = function(dir)
+{
+	var nextSlide = this.activeSlide + dir*this.indexColumns;
+	if ((nextSlide&gt;=0) &amp;&amp; (nextSlide&lt;this.slides.length))
+	{
+	    // FIXME: Inefficient implementation. It should check if new displayIndex()
+	    //        is necessary or not.
+	    var activeRow = Math.floor(nextSlide/this.indexColumns);
+	    var topRow = Math.max(activeRow-this.indexColumns+1,0);
+	    this.displayIndex(topRow);
+
+	    this.indexSetActiveSlide(nextSlide);
+	}
+
+}
+
+/** Toggle to Slide Index Mode
+ *
+ *  Added by Santiago Jaramillo - 2012-02-01
+ */
+JessyInk.prototype.toggleSlideIndex = function()
+{
+    if (this.currentMode == 'slide_index')
+    {
+	this.currentMode = 'core_slide';
+	for (var slide in this.slides)
+	{
+	    this.slides[slide].gElement.removeAttribute('transform');
+	    this.slides[slide].hide();
+        }
+	this.slideSetActiveSlide(this.activeSlide);
+	
+    }
+    else
+    {
+	this.currentMode = 'slide_index';
+        this.displayIndex(0);
+	this.slideSetActiveSlide(this.activeSlide);
+    }
+}
+
+/** Show Slide Index
+ *
+ *  Added by Santiago Jaramillo - 2012-02-01
+ */
+JessyInk.prototype.displayIndex = function(topRow)
+{
+    var NCOLS = this.indexColumns;
+    var row;
+    var col;
+    var offsetX;
+    var offsetY;
+    var paddingX = 0.01;
+    var paddingY = 0.01;
+    var scale = 1/NCOLS;
+    for (var slideind in this.slides)
+    {
+	row = Math.floor(slideind/NCOLS) - topRow;
+	col = slideind % NCOLS;
+	//this.slides[slide].hide(false);
+	offsetX = col*(1+paddingX)*this.width;
+	offsetY = row*(1+paddingY)*this.height;
+	this.slides[slideind].gElement.setAttribute('transform','scale('+scale+') translate('+offsetX+','+offsetY+')');
+	this.slides[slideind].gElement.setAttribute('opacity',0.5);
+	this.slides[slideind].gElement.style.display = 'inherit';
+    }
+    
+}
+
+/** Function to set the active slide in the index view.
+ *
+ *  @param toSlide index of the active slide
+ */
+JessyInk.prototype.indexSetActiveSlide = function(toSlide)
+{
+	if (toSlide &gt;= this.slides.length)
+		toSlide = this.slides.length - 1;
+	else if (toSlide &lt; 0)
+		toSlide = 0;
+
+	// FIXME: opacity constant defined in TWO places, see displayIndex()
+	this.slides[this.activeSlide].gElement.setAttribute('opacity',0.5);
+	this.activeSlide = toSlide;
+
+	// FIXME: the following needs to be done the JessyInk-2.0 way
+	//window.location.hash = (activeSlide + 1) + '_0';
+
+	this.slides[this.activeSlide].gElement.setAttribute('opacity',1);
+}
+
+/** Function to change the number of columns in index.
+ *
+ *  @param addColumn
+ */
+JessyInk.prototype.changeIndexColNumber = function(addColumn)
+{
+	this.indexColumns += addColumn;
+	if (this.indexColumns &lt; 2)
+		this.indexColumns = 2;
+
+	this.displayIndex(0);
+	this.slideSetActiveSlide(this.activeSlide);
+}
+
+
+
+/** Function to skip effects and directly either put the slide into start or end state or change slides.
+ *
+ *  @param dir direction of the change (1 = forwards, -1 = backwards)
+ *
+ *  Added by Santiago Jaramillo - 2012-01-17
+ */
+JessyInk.prototype.skipEffects = function(dir)
+{
+    // FIXME: should the limits check happen here or on slideSetActiveSlide() ?
+    if (((dir == 1) &amp;&amp; (this.activeSlide &lt; (this.slides.length - 1))) || (((dir == -1) &amp;&amp; (this.activeSlide &gt; 0))))
+    {
+	this.slideSetActiveSlide(this.activeSlide+dir);
+    } 
+}
+
+/** Function to set the active slide in the slide view.
+ *
+ *  @param nbr index of the active slide
+ *
+ *  Added by Santiago Jaramillo - 2012-01-17
+ */
+JessyInk.prototype.slideSetActiveSlide = function(toSlide)
+{
+    //this.changeSlide(1);
+    this.effectArray = new Array();
+    this.effectArray[0] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), -1);
+    this.activeSlide = toSlide;
+    this.effectArray[1] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), 1);
+    this.activeEffect = 0;
+    this.slides[this.activeSlide].setToState(this.STATE_START);
+    this.transCounter = 0;
+    this.startTime = (new Date()).getTime();
+    this.lastFrameTime = null;
+    this.playEffects(1);
+}
+
+/*****************************************************************************/
+/*****************************************************************************/
+
+
+/** Function to handle all mouse events.
+ *
+ *	@param	evnt	event
+ *	@param	action	type of event (e.g. mouse up, mouse wheel)
+ */
+JessyInk.prototype.mouseHandlerDispatch = function(evnt, action)
+{
+	if (!evnt)
+		evnt = window.event;
+
+	var retVal = true;
+
+	if (!this.processingEffect &amp;&amp; this.mouseHandlerDictionary[this.currentMode] &amp;&amp; this.mouseHandlerDictionary[this.currentMode][action])
+	{
+		var subRetVal = this.mouseHandlerDictionary[this.currentMode][action](evnt);
+
+		if (subRetVal != null &amp;&amp; subRetVal != undefined)
+			retVal = subRetVal;
+	}
+
+	if (evnt.preventDefault &amp;&amp; !retVal)
+		evnt.preventDefault();
+
+	evnt.returnValue = retVal;
+
+	return retVal;
+};
+
+/** Function to supply the default mouse handler dictionary.
+ *
+ * @returns default mouse handler dictionary
+ */
+JessyInk.prototype.getDefaultMouseHandlerDictionary = function()
+{
+	var mouseHandlerDict = new Object();
+
+	mouseHandlerDict.core_slide = new Object();
+	mouseHandlerDict.core_slide[this.MOUSE_DOWN] = function(evnt) { this.dispatchEffects(1); };
+	mouseHandlerDict.core_slide[this.MOUSE_WHEEL] = function(evnt) { this.slideMousewheel(evnt); };
+
+	return mouseHandlerDict;
+};
+
+/** Convenience function to obtain a transformation matrix from a point matrix.
+ *
+ *  @param mPoints Point matrix.
+ *  @return A transformation matrix.
+ */
+JessyInk.prototype.pointMatrixToTransformation = function(mPoints)
+{
+	  mPointsOld = (new matrixSVG()).fromElements(0, this.width, this.width, 0, 0, this.height, 1, 1, 1);
+
+		return mPointsOld.mult(mPoints.inv());
+};
+
+/** Convenience function to obtain a matrix with three corners of a rectangle.
+ *
+ *  @param rect an svg rectangle
+ *  @return a matrixSVG containing three corners of the rectangle
+ */
+JessyInk.prototype.rectToMatrix = function(rect)
+{
+	rectWidth = rect.getBBox().width;
+	rectHeight = rect.getBBox().height;
+	rectX = rect.getBBox().x;
+	rectY = rect.getBBox().y;
+	rectXcorr = 0;
+	rectYcorr = 0;
+
+	scaleX = this.width / rectWidth;
+	scaleY = this.height / rectHeight;
+
+	if (scaleX &gt; scaleY)
+	{
+		scaleX = scaleY;
+		rectXcorr -= (this.width / scaleX - rectWidth) / 2;
+		rectWidth = this.width / scaleX;
+	}
+	else
+	{
+		scaleY = scaleX;
+		rectYcorr -= (this.height / scaleY - rectHeight) / 2;
+		rectHeight = this.height / scaleY;
+	}
+
+	if (rect.transform.baseVal.numberOfItems &lt; 1)
+	{
+		mRectTrans = (new matrixSVG()).fromElements(1, 0, 0, 0, 1, 0, 0, 0, 1);
+	}
+	else
+	{
+		mRectTrans = (new matrixSVG()).fromSVGMatrix(rect.transform.baseVal.consolidate().matrix);
+	}
+
+	newBasePoints = (new matrixSVG()).fromElements(rectX, rectX, rectX, rectY, rectY, rectY, 1, 1, 1);
+	newVectors = (new matrixSVG()).fromElements(rectXcorr, rectXcorr + rectWidth, rectXcorr + rectWidth, rectYcorr, rectYcorr, rectYcorr + rectHeight, 0, 0, 0);
+
+	return mRectTrans.mult(newBasePoints.add(newVectors));
+};
+
+JessyInk.prototype.init = function()
+{
+	var suspendId = this.rootNode.suspendRedraw(1000);
+
+	this.setAutoScale();
+	this.setBackgroundColor();
+
+	this.rootNode.unsuspendRedraw(suspendId);
+	suspendId = this.rootNode.suspendRedraw(2000);
+
+	this.removeJessyInkLayer();
+	this.hideEverything();
+	this.makeJessyInkLayer();
+	this.defineClipPath();
+	this.defineBackground();
+	this.getSlides();
+	this.callSlideChangingExtensions();
+	this.callSlideDecoratingExtensions();
+	this.initModules();
+	this.initPresentation();
+
+	this.rootNode.unsuspendRedraw(suspendId);
+	this.rootNode.forceRedraw();
+
+	var that = this;
+	// Set mouse event handler.
+//	document.onmousedown = function(e) { return this.mouseHandlerDispatch(e, MOUSE_DOWN); };
+//	document.onmouseup = function(e) { return this.mouseHandlerDispatch(e, MOUSE_UP); };
+//	document.onmousemove = function(e) { return this.mouseHandlerDispatch(e, MOUSE_MOVE); };
+//
+//	// Moz
+//	if (window.addEventListener)
+//	{
+//		window.addEventListener('DOMMouseScroll', function(e) { return this.mouseHandlerDispatch(e, MOUSE_WHEEL); }, false);
+//	}
+//
+//	// Opera Safari OK - may not work in IE
+//	window.onmousewheel = function(e) { return this.mouseHandlerDispatch(e, MOUSE_WHEEL); };
+
+	// Set event handler for key down.
+	document.onkeydown = function(e) { that.keydown(e); };
+};
+
+if (typeof(JESSYINK) === 'undefined')
+{
+	JESSYINK = new Object();
+}
+
+JESSYINK.main = new JessyInk();
+
+window.onload = function() { JESSYINK.main.init(); };
+
+/** Class representing an svg matrix.
+*/
+function matrixSVG()
+{
+	this.e11 = 0; // a
+	this.e12 = 0; // c
+	this.e13 = 0; // e
+	this.e21 = 0; // b
+	this.e22 = 0; // d
+	this.e23 = 0; // f
+	this.e31 = 0;
+	this.e32 = 0;
+	this.e33 = 0;
+}
+
+/** Constructor function.
+ *
+ *	@param a element a (i.e. 1, 1) as described in the svg standard.
+ *	@param b element b (i.e. 2, 1) as described in the svg standard.
+ *	@param c element c (i.e. 1, 2) as described in the svg standard.
+ *	@param d element d (i.e. 2, 2) as described in the svg standard.
+ *	@param e element e (i.e. 1, 3) as described in the svg standard.
+ *	@param f element f (i.e. 2, 3) as described in the svg standard.
+ */
+matrixSVG.prototype.fromSVGElements = function(a, b, c, d, e, f)
+{
+	this.e11 = a;
+	this.e12 = c;
+	this.e13 = e;
+	this.e21 = b;
+	this.e22 = d;
+	this.e23 = f;
+	this.e31 = 0;
+	this.e32 = 0;
+	this.e33 = 1;
+
+	return this;
+}
+
+/** Constructor function.
+ *
+ *	@param matrix an svg matrix as described in the svg standard.
+ */
+matrixSVG.prototype.fromSVGMatrix = function(m)
+{
+	this.e11 = m.a;
+	this.e12 = m.c;
+	this.e13 = m.e;
+	this.e21 = m.b;
+	this.e22 = m.d;
+	this.e23 = m.f;
+	this.e31 = 0;
+	this.e32 = 0;
+	this.e33 = 1;
+
+	return this;
+}
+
+/** Constructor function.
+ *
+ *	@param e11 element 1, 1 of the matrix.
+ *	@param e12 element 1, 2 of the matrix.
+ *	@param e13 element 1, 3 of the matrix.
+ *	@param e21 element 2, 1 of the matrix.
+ *	@param e22 element 2, 2 of the matrix.
+ *	@param e23 element 2, 3 of the matrix.
+ *	@param e31 element 3, 1 of the matrix.
+ *	@param e32 element 3, 2 of the matrix.
+ *	@param e33 element 3, 3 of the matrix.
+ */
+matrixSVG.prototype.fromElements = function(e11, e12, e13, e21, e22, e23, e31, e32, e33)
+{
+	this.e11 = e11;
+	this.e12 = e12;
+	this.e13 = e13;
+	this.e21 = e21;
+	this.e22 = e22;
+	this.e23 = e23;
+	this.e31 = e31;
+	this.e32 = e32;
+	this.e33 = e33;
+
+	return this;
+}
+
+/** Constructor function.
+ *
+ *	@param attrString string value of the 'transform' attribute (currently only 'matrix' is accepted)
+ */
+matrixSVG.prototype.fromAttribute = function(attrString)
+{
+	str = attrString.substr(7, attrString.length - 8);
+
+	str = str.trim();
+
+	strArray = str.split(',');
+
+	// Opera does not use commas to separate the values of the matrix, only spaces.
+	if (strArray.length != 6)
+		strArray = str.split(' ');
+
+	this.e11 = parseFloat(strArray[0]);
+	this.e21 = parseFloat(strArray[1]);
+	this.e31 = 0;
+	this.e12 = parseFloat(strArray[2]);
+	this.e22 = parseFloat(strArray[3]);
+	this.e32 = 0;
+	this.e13 = parseFloat(strArray[4]);
+	this.e23 = parseFloat(strArray[5]);
+	this.e33 = 1;
+
+	return this;
+}
+
+/** Output function
+ *
+ *	@return a string that can be used as the 'transform' attribute.
+ */
+matrixSVG.prototype.toAttribute = function()
+{
+	return 'matrix(' + this.e11 + ', ' + this.e21 + ', ' + this.e12 + ', ' + this.e22 + ', ' + this.e13 + ', ' + this.e23 + ')';
+}
+
+/** Matrix nversion.
+ *
+ *	@return the inverse of the matrix
+ */
+matrixSVG.prototype.inv = function()
+{
+	out = new matrixSVG();
+
+	det = this.e11 * (this.e33 * this.e22 - this.e32 * this.e23) - this.e21 * (this.e33 * this.e12 - this.e32 * this.e13) + this.e31 * (this.e23 * this.e12 - this.e22 * this.e13);
+
+	out.e11 =  (this.e33 * this.e22 - this.e32 * this.e23) / det;
+	out.e12 = -(this.e33 * this.e12 - this.e32 * this.e13) / det;
+	out.e13 =  (this.e23 * this.e12 - this.e22 * this.e13) / det;
+	out.e21 = -(this.e33 * this.e21 - this.e31 * this.e23) / det;
+	out.e22 =  (this.e33 * this.e11 - this.e31 * this.e13) / det;
+	out.e23 = -(this.e23 * this.e11 - this.e21 * this.e13) / det;
+	out.e31 =  (this.e32 * this.e21 - this.e31 * this.e22) / det;
+	out.e32 = -(this.e32 * this.e11 - this.e31 * this.e12) / det;
+	out.e33 =  (this.e22 * this.e11 - this.e21 * this.e12) / det;
+
+	return out;
+}
+
+/** Matrix multiplication.
+ *
+ *	@param op another svg matrix
+ *	@return this * op
+ */
+matrixSVG.prototype.mult = function(op)
+{
+	out = new matrixSVG();
+
+	out.e11 = this.e11 * op.e11 + this.e12 * op.e21 + this.e13 * op.e31;
+	out.e12 = this.e11 * op.e12 + this.e12 * op.e22 + this.e13 * op.e32;
+	out.e13 = this.e11 * op.e13 + this.e12 * op.e23 + this.e13 * op.e33;
+	out.e21 = this.e21 * op.e11 + this.e22 * op.e21 + this.e23 * op.e31;
+	out.e22 = this.e21 * op.e12 + this.e22 * op.e22 + this.e23 * op.e32;
+	out.e23 = this.e21 * op.e13 + this.e22 * op.e23 + this.e23 * op.e33;
+	out.e31 = this.e31 * op.e11 + this.e32 * op.e21 + this.e33 * op.e31;
+	out.e32 = this.e31 * op.e12 + this.e32 * op.e22 + this.e33 * op.e32;
+	out.e33 = this.e31 * op.e13 + this.e32 * op.e23 + this.e33 * op.e33;
+
+	return out;
+}
+
+/** Matrix addition.
+ *
+ *	@param op another svg matrix
+ *	@return this + op
+ */
+matrixSVG.prototype.add = function(op)
+{
+	out = new matrixSVG();
+
+	out.e11 = this.e11 + op.e11;
+	out.e12 = this.e12 + op.e12;
+	out.e13 = this.e13 + op.e13;
+	out.e21 = this.e21 + op.e21;
+	out.e22 = this.e22 + op.e22;
+	out.e23 = this.e23 + op.e23;
+	out.e31 = this.e31 + op.e31;
+	out.e32 = this.e32 + op.e32;
+	out.e33 = this.e33 + op.e33;
+
+	return out;
+}
+
+/** Matrix mixing.
+ *
+ *	@param op another svg matrix
+ *	@parma contribOp contribution of the other matrix (0 &lt;= contribOp &lt;= 1)
+ *	@return (1 - contribOp) * this + contribOp * op
+ */
+matrixSVG.prototype.mix = function(op, contribOp)
+{
+	contribThis = 1.0 - contribOp;
+	out = new matrixSVG();
+
+	out.e11 = contribThis * this.e11 + contribOp * op.e11;
+	out.e12 = contribThis * this.e12 + contribOp * op.e12;
+	out.e13 = contribThis * this.e13 + contribOp * op.e13;
+	out.e21 = contribThis * this.e21 + contribOp * op.e21;
+	out.e22 = contribThis * this.e22 + contribOp * op.e22;
+	out.e23 = contribThis * this.e23 + contribOp * op.e23;
+	out.e31 = contribThis * this.e31 + contribOp * op.e31;
+	out.e32 = contribThis * this.e32 + contribOp * op.e32;
+	out.e33 = contribThis * this.e33 + contribOp * op.e33;
+
+	return out;
+}
+
+/** Trimming function for strings.
+*/
+String.prototype.trim = function()
+{
+	return this.replace(/^\s+|\s+$/g, '');
+}
+
+
+/******* TEST CODE ********
+
+      &lt;script
+         type='text/javascript' xlink:actuate='onLoad' xlink:href='JessyInkPlus_main.js'
+         id='script68'
+         ns1:scriptname='JessyInkPlus_main.js'
+         sodipodi:insensitive='true'&gt;
+      &lt;/script&gt;
+
+		//this.slides[slide].gElement.setAttribute('onmouseover', 'if (currentMode == INDEX_MODE) { indexSetActiveSlide(' + slide + '); };');
+		//this.slides[slide].gElement.setAttribute('onmouseover', 'console.log(this);');
+
+
+************************** *///</script>
+      <text
+         xml:space="preserve"
+         style="font-size:36px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica Bold"
+         x="270.89526"
+         y="206.94789"
+         id="text24628"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan24630"
+           x="270.89526"
+           y="206.94789">jinkslide</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:36px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica"
+         x="271.01245"
+         y="247.354"
+         id="text24632"
+         sodipodi:linespacing="100%"><tspan
+           sodipodi:role="line"
+           x="271.01245"
+           y="247.354"
+           style="font-size:24px;text-align:center;line-height:100%;text-anchor:middle"
+           id="tspan24640">2012-02-13</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="slide"
+     style="display:none">
+    <text
+       id="text3053"
+       y="372.91833"
+       x="511.6875"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Helvetica;-inkscape-font-specification:Helvetica Bold"
+       xml:space="preserve"><tspan
+         y="372.91833"
+         x="511.6875"
+         id="tspan3055"
+         sodipodi:role="line">Slide</tspan></text>
+  </g>
+</svg>
