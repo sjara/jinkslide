@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
@@ -979,6 +979,7 @@ JessyInk.prototype.getDefaultCharCodeDictionary = function()
 
 	charCodeDict.core_slide = new Object();
 	charCodeDict.core_slide['i'] = function () { that.toggleSlideIndex(); };
+	charCodeDict.core_slide['.'] = function () { that.toggleSlideIndex(); };
 	charCodeDict.core_slide['d'] = function () { that.slideSwitchToDrawingMode(); };
 	charCodeDict.core_slide['D'] = function () { that.slideQueryDuration(); };
 	charCodeDict.core_slide['n'] = function () { that.slideAddSlide(activeSlide); };
@@ -988,6 +989,7 @@ JessyInk.prototype.getDefaultCharCodeDictionary = function()
 
 	charCodeDict.slide_index = new Object();
 	charCodeDict.slide_index['i'] = function () { that.toggleSlideIndex(); };
+	charCodeDict.slide_index['.'] = function () { that.toggleSlideIndex(); };
 	charCodeDict.slide_index['='] = function () { that.changeIndexColNumber(-1); };
 	charCodeDict.slide_index['+'] = function () { that.changeIndexColNumber(-1); };
 	charCodeDict.slide_index['-'] = function () { that.changeIndexColNumber(1); };
@@ -1017,7 +1019,9 @@ JessyInk.prototype.getDefaultKeyCodeDictionary = function()
 
 	keyCodeDict.slide_index = new Object();
 	keyCodeDict.slide_index[this.RIGHT_KEY] = function() { that.indexSetActiveSlide(that.activeSlide+1); };
+	keyCodeDict.slide_index[this.PAGE_DOWN_KEY] = function() { that.indexSetActiveSlide(that.activeSlide+1); };
 	keyCodeDict.slide_index[this.LEFT_KEY] = function() { that.indexSetActiveSlide(that.activeSlide-1); };
+	keyCodeDict.slide_index[this.UP_KEY] = function() { that.indexSetActiveSlide(that.activeSlide-1); };
 	keyCodeDict.slide_index[this.ENTER_KEY] = function () { that.toggleSlideIndex(); };
 	keyCodeDict.slide_index[this.UP_KEY] = function() { that.nextRowInIndex(-1); };
 	keyCodeDict.slide_index[this.DOWN_KEY] = function() { that.nextRowInIndex(1); };
