@@ -2,6 +2,9 @@
 //
 // Copyright 2012 Santiago Jaramillo
 // Copyright 2008, 2009, 2010 Hannes Hochreiner
+//
+// Originally based on JessyInk (https://launchpad.net/jessyink) by Hannes Hochreiner.
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -30,7 +33,7 @@ function Slide(groupElement, clipPathId, slideBackgroundId)
 		'inkscape':'http://www.inkscape.org/namespaces/inkscape',
 		'xlink':'http://www.w3.org/1999/xlink',
 		'xml':'http://www.w3.org/XML/1998/namespace',
-		'jessyink':'https://launchpad.net/jessyink'};
+		'jinkslide':'https://github.com/sjara/jinkslide'};
 	this.elements = new Object();
 	this.origGElement = groupElement;
 	this.gElement = this.removeModulesAndIds(this.origGElement.cloneNode(true));
@@ -96,14 +99,14 @@ Slide.prototype.removeModulesAndIds = function(node)
 				n.removeAttribute('id');
 			}
 
-			if (n.getAttributeNS(this.nss.jessyink, 'module'))
+			if (n.getAttributeNS(this.nss.jinkslide, 'module'))
 			{
 				nodesToBeRemoved.push(n);
 			}
 
-			if (n.getAttributeNS(this.nss.jessyink, 'element'))
+			if (n.getAttributeNS(this.nss.jinkslide, 'element'))
 			{
-				var cat = n.getAttributeNS(this.nss.jessyink, 'element');
+				var cat = n.getAttributeNS(this.nss.jinkslide, 'element');
 
 				// Hide element.
 				n.style.display = 'none';
@@ -245,7 +248,7 @@ Slide.prototype.setToState = function(state)
 	}
 };
 
-function JessyInkEffectAppear(element, direction)
+function JinkSlideEffectAppear(element, direction)
 {
 	this.gElement = element;
 	this.baseDirection = direction;
@@ -253,7 +256,7 @@ function JessyInkEffectAppear(element, direction)
 	return this;
 }
 
-JessyInkEffectAppear.prototype.playEffect = function (dir, time)
+JinkSlideEffectAppear.prototype.playEffect = function (dir, time)
 {
 	if ((dir * this.baseDirection) == 1)
 	{
@@ -269,9 +272,9 @@ JessyInkEffectAppear.prototype.playEffect = function (dir, time)
 	return true;
 };
 
-/** Main JessyInk class.
+/** Main JinkSlide class.
 */
-function JessyInk()
+function JinkSlide()
 {
 	this.nss = {	'sodipodi':'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd',
 		'cc':'http://web.resource.org/cc/',
@@ -281,7 +284,7 @@ function JessyInk()
 		'inkscape':'http://www.inkscape.org/namespaces/inkscape',
 		'xlink':'http://www.w3.org/1999/xlink',
 		'xml':'http://www.w3.org/XML/1998/namespace',
-		'jessyink':'https://launchpad.net/jessyink'};
+		'jinkslide':'https://github.com/sjara/jinkslide'};
 	this.rootNode = document.getElementsByTagNameNS(this.nss.svg, 'svg')[0];
 	this.width;
 	this.height;
@@ -339,7 +342,7 @@ function JessyInk()
  * attribute, if needed, and changes the width and height attributes of the
  * root node to 100%.
  */
-JessyInk.prototype.setAutoScale = function()
+JinkSlide.prototype.setAutoScale = function()
 {
 	if (this.rootNode.getAttribute('viewBox'))
 	{
@@ -363,7 +366,7 @@ JessyInk.prototype.setAutoScale = function()
  * applies it to the root node. It also saves the color in the field
  * 'bgColor' for later use with the slides.
  */
-JessyInk.prototype.setBackgroundColor = function()
+JinkSlide.prototype.setBackgroundColor = function()
 {
 	// Setting the background color.
 	var namedViews = document.getElementsByTagNameNS(this.nss.sodipodi, 'namedview');
@@ -393,7 +396,7 @@ JessyInk.prototype.setBackgroundColor = function()
  *
  *  @param slideElement the slide element to check
  */
-JessyInk.prototype.checkAndApplySlideBackgroundColor = function(slideElement)
+JinkSlide.prototype.checkAndApplySlideBackgroundColor = function(slideElement)
 {
 	// Look for groups marked as background setters
 	var allGroups = slideElement.getElementsByTagNameNS(this.nss.svg, 'g');
@@ -403,7 +406,7 @@ JessyInk.prototype.checkAndApplySlideBackgroundColor = function(slideElement)
 		var group = allGroups[i];
 		
 		// Check if this group is marked as a background setter
-		if (group.getAttributeNS(this.nss.jessyink, 'background-setter') === 'true')
+		if (group.getAttributeNS(this.nss.jinkslide, 'background-setter') === 'true')
 		{
 			// Look for rectangles in this background setter group
 			var rects = group.getElementsByTagNameNS(this.nss.svg, 'rect');
@@ -434,7 +437,7 @@ JessyInk.prototype.checkAndApplySlideBackgroundColor = function(slideElement)
 					this.rootNode.setAttribute('style', newStyle);
 					
 					// Also update the background rectangle used by slides
-					var backgroundRect = document.getElementById('jessyInkBackground');
+					var backgroundRect = document.getElementById('jinkSlideBackground');
 					if (backgroundRect)
 					{
 						backgroundRect.setAttribute('fill', fillColor);
@@ -453,7 +456,7 @@ JessyInk.prototype.checkAndApplySlideBackgroundColor = function(slideElement)
 
 /** Private function to reset the background to the default color.
  */
-JessyInk.prototype.resetBackgroundColor = function()
+JinkSlide.prototype.resetBackgroundColor = function()
 {
 	// Apply the default background color to the root node
 	var currentStyle = this.rootNode.getAttribute('style') || '';
@@ -462,19 +465,19 @@ JessyInk.prototype.resetBackgroundColor = function()
 	this.rootNode.setAttribute('style', newStyle);
 	
 	// Also update the background rectangle used by slides
-	var backgroundRect = document.getElementById('jessyInkBackground');
+	var backgroundRect = document.getElementById('jinkSlideBackground');
 	if (backgroundRect)
 	{
 		backgroundRect.setAttribute('fill', this.bgColor);
 	}
 };
 
-/** Private function this removes the old JessyInk layer, if present.
+/** Private function this removes the old JinkSlide layer, if present.
 */
-JessyInk.prototype.removeJessyInkLayer = function()
+JinkSlide.prototype.removeJinkSlideLayer = function()
 {
-	// Delete existing JessyInk presentation layer.
-	var oldLayer = document.getElementById('jessyInkPresentationLayer');
+	// Delete existing JinkSlide presentation layer.
+	var oldLayer = document.getElementById('jinkSlidePresentationLayer');
 
 	if (oldLayer)
 	{
@@ -489,7 +492,7 @@ JessyInk.prototype.removeJessyInkLayer = function()
  * children of the root node. This is done to avoid any interference with the
  * presentation and to limit the number of elements this need to be drawn.
  */
-JessyInk.prototype.hideEverything = function()
+JinkSlide.prototype.hideEverything = function()
 {
 	for (nodeNumber in this.rootNode.childNodes)
 	{
@@ -516,20 +519,20 @@ JessyInk.prototype.hideEverything = function()
 	}
 };
 
-/** Private function for creating a new JessyInk layer.
+/** Private function for creating a new JinkSlide layer.
 */
-JessyInk.prototype.makeJessyInkLayer = function()
+JinkSlide.prototype.makeJinkSlideLayer = function()
 {
-	var JessyInkPresentationLayer = document.createElementNS(this.nss.svg, 'g');
+	var JinkSlidePresentationLayer = document.createElementNS(this.nss.svg, 'g');
 
-	JessyInkPresentationLayer.setAttributeNS(this.nss.inkscape, 'groupmode', 'layer');
-	JessyInkPresentationLayer.setAttributeNS(this.nss.inkscape, 'label', 'JessyInk Presentation Layer');
-	JessyInkPresentationLayer.setAttributeNS(this.nss.jessyink, 'presentationLayer', 'presentationLayer');
-	JessyInkPresentationLayer.setAttribute('id', 'jessyInkPresentationLayer');
-	JessyInkPresentationLayer.setAttribute('opacity', 1);
-	JessyInkPresentationLayer.style.display = 'inherit';
+	JinkSlidePresentationLayer.setAttributeNS(this.nss.inkscape, 'groupmode', 'layer');
+	JinkSlidePresentationLayer.setAttributeNS(this.nss.inkscape, 'label', 'JinkSlide Presentation Layer');
+	JinkSlidePresentationLayer.setAttributeNS(this.nss.jinkslide, 'presentationLayer', 'presentationLayer');
+	JinkSlidePresentationLayer.setAttribute('id', 'jinkSlidePresentationLayer');
+	JinkSlidePresentationLayer.setAttribute('opacity', 1);
+	JinkSlidePresentationLayer.style.display = 'inherit';
 
-	this.presentationLayer = this.rootNode.appendChild(JessyInkPresentationLayer);
+	this.presentationLayer = this.rootNode.appendChild(JinkSlidePresentationLayer);
 }
 
 /** Private function to define a clip path for the slides.
@@ -537,10 +540,10 @@ JessyInk.prototype.makeJessyInkLayer = function()
  * The function first deletes the old clip path, if present, and then creates
  * a new one.
  */
-JessyInk.prototype.defineClipPath = function()
+JinkSlide.prototype.defineClipPath = function()
 {
 	// Delete existing clip path.
-	var oldClipPath = document.getElementById('jessyInkSlideClipPath');
+	var oldClipPath = document.getElementById('jinkSlideSlideClipPath');
 
 	if (oldClipPath)
 	{
@@ -570,7 +573,7 @@ JessyInk.prototype.defineClipPath = function()
 	rectNode.setAttribute('width', this.width);
 	rectNode.setAttribute('height', this.height);
 
-	clipPath.setAttribute('id', 'jessyInkSlideClipPath');
+	clipPath.setAttribute('id', 'jinkSlideSlideClipPath');
 	clipPath.setAttribute('clipPathUnits', 'userSpaceOnUse');
 
 	clipPath.appendChild(rectNode);
@@ -584,10 +587,10 @@ JessyInk.prototype.defineClipPath = function()
  * The function first delets the old definition, if present, and then creates
  * a new one.
  */
-JessyInk.prototype.defineBackground = function()
+JinkSlide.prototype.defineBackground = function()
 {
 	// Delete existing background.
-	var background = document.getElementById('jessyInkSlideBackground');
+	var background = document.getElementById('jinkSlideSlideBackground');
 
 	if (background)
 	{
@@ -615,7 +618,7 @@ JessyInk.prototype.defineBackground = function()
 	rectNode.setAttribute('y', 0);
 	rectNode.setAttribute('width', this.width);
 	rectNode.setAttribute('height', this.height);
-	rectNode.setAttribute('id', 'jessyInkBackground');
+	rectNode.setAttribute('id', 'jinkSlideBackground');
 	rectNode.setAttribute('fill', this.bgColor);
 
 	// Append clip path to defs node.
@@ -624,7 +627,7 @@ JessyInk.prototype.defineBackground = function()
 
 /** Private function to collect all the slides.
 */
-JessyInk.prototype.getSlides = function()
+JinkSlide.prototype.getSlides = function()
 {
 	for (nodeNumber in this.rootNode.childNodes)
 	{
@@ -632,52 +635,52 @@ JessyInk.prototype.getSlides = function()
 
 		if ((nd !== undefined) && (nd.nodeType === 1))
 		{
-			if ((nd.nodeName === 'g') && (nd.getAttributeNS(this.nss.inkscape, 'groupmode')) && (nd.getAttributeNS(this.nss.inkscape, 'groupmode') === 'layer') && (nd.getAttributeNS(this.nss.jessyink, 'presentationLayer') != 'presentationLayer'))
+			if ((nd.nodeName === 'g') && (nd.getAttributeNS(this.nss.inkscape, 'groupmode')) && (nd.getAttributeNS(this.nss.inkscape, 'groupmode') === 'layer') && (nd.getAttributeNS(this.nss.jinkslide, 'presentationLayer') != 'presentationLayer'))
 			{
-				var tmpSlide = new Slide(this.rootNode.childNodes[nodeNumber], 'jessyInkSlideClipPath', 'jessyInkSlideBackground');
+				var tmpSlide = new Slide(this.rootNode.childNodes[nodeNumber], 'jinkSlideSlideClipPath', 'jinkSlideSlideBackground');
 				tmpSlide.hide(true);
 				this.slides.push(tmpSlide);
 
-				document.getElementById('jessyInkPresentationLayer').appendChild(this.slides[this.slides.length - 1].getGElement());
+				document.getElementById('jinkSlidePresentationLayer').appendChild(this.slides[this.slides.length - 1].getGElement());
 			}
 		}
 	}
 };
 
-JessyInk.prototype.callSlideChangingExtensions = function()
+JinkSlide.prototype.callSlideChangingExtensions = function()
 {
-	for (module in JESSYINK.modules)
+	for (module in JINKSLIDE.modules)
 	{
-		if (JESSYINK.modules[module].changeSlides)
+		if (JINKSLIDE.modules[module].changeSlides)
 		{
-			JESSYINK.modules[module].changeSlides(this);
+			JINKSLIDE.modules[module].changeSlides(this);
 		}
 	}
 };
 
-JessyInk.prototype.callSlideDecoratingExtensions = function()
+JinkSlide.prototype.callSlideDecoratingExtensions = function()
 {
-	for (module in JESSYINK.modules)
+	for (module in JINKSLIDE.modules)
 	{
-		if (JESSYINK.modules[module].decorateSlides)
+		if (JINKSLIDE.modules[module].decorateSlides)
 		{
-			JESSYINK.modules[module].decorateSlides(this);
+			JINKSLIDE.modules[module].decorateSlides(this);
 		}
 	}
 };
 
-JessyInk.prototype.initModules = function()
+JinkSlide.prototype.initModules = function()
 {
-	for (module in JESSYINK.modules)
+	for (module in JINKSLIDE.modules)
 	{
-		if (JESSYINK.modules[module].init)
+		if (JINKSLIDE.modules[module].init)
 		{
-			JESSYINK.modules[module].init(this);
+			JINKSLIDE.modules[module].init(this);
 		}
 	}
 };
 
-JessyInk.prototype.initPresentation = function()
+JinkSlide.prototype.initPresentation = function()
 {
 	for (var slide in this.slides)
 	{
@@ -702,7 +705,7 @@ JessyInk.prototype.initPresentation = function()
  *
  *  @param dir direction of the change (1 = forwards, -1 = backwards)
  */
-JessyInk.prototype.dispatchEffects = function(dir)
+JinkSlide.prototype.dispatchEffects = function(dir)
 {
 	if (this.slides[this.activeSlide].effects && (((dir == 1) && (this.activeEffect < this.slides[this.activeSlide].getEffectIndexCount())) || ((dir == -1) && (this.activeEffect > 0))))
 	{
@@ -734,7 +737,7 @@ JessyInk.prototype.dispatchEffects = function(dir)
  *
  *  @param dir direction (1 = forwards, -1 = backwards)
  */
-JessyInk.prototype.changeSlide = function(dir)
+JinkSlide.prototype.changeSlide = function(dir)
 {
 	// Stop all sounds when changing slides
 	stopAllSounds();
@@ -752,7 +755,7 @@ JessyInk.prototype.changeSlide = function(dir)
 		}
 		else
 		{
-			this.effectArray[0] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), -1);
+			this.effectArray[0] = new JinkSlideEffectAppear(this.slides[this.activeSlide].getGElement(), -1);
 		}
 	}
 	else if (dir == -1)
@@ -763,7 +766,7 @@ JessyInk.prototype.changeSlide = function(dir)
 		}
 		else
 		{
-			this.effectArray[0] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), 1);
+			this.effectArray[0] = new JinkSlideEffectAppear(this.slides[this.activeSlide].getGElement(), 1);
 		}
 	}
 
@@ -777,7 +780,7 @@ JessyInk.prototype.changeSlide = function(dir)
 		}
 		else
 		{
-			this.effectArray[1] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), 1);
+			this.effectArray[1] = new JinkSlideEffectAppear(this.slides[this.activeSlide].getGElement(), 1);
 		}
 	}
 	else if (dir == -1)
@@ -788,7 +791,7 @@ JessyInk.prototype.changeSlide = function(dir)
 		}
 		else
 		{
-			this.effectArray[1] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), -1);
+			this.effectArray[1] = new JinkSlideEffectAppear(this.slides[this.activeSlide].getGElement(), -1);
 		}
 	}
 
@@ -821,7 +824,7 @@ JessyInk.prototype.changeSlide = function(dir)
  *
  *  @param dir direction in which to play the effect (1 = forwards, -1 = backwards)
  */
-JessyInk.prototype.playEffects = function(dir)
+JinkSlide.prototype.playEffects = function(dir)
 {
 	var done = true;
 	var suspendHandle = this.rootNode.suspendRedraw(200);
@@ -866,7 +869,7 @@ JessyInk.prototype.playEffects = function(dir)
  *
  *  @param e the event
  */
-JessyInk.prototype.keydown = function (e)
+JinkSlide.prototype.keydown = function (e)
 {
 	var that = this;
 
@@ -885,7 +888,7 @@ JessyInk.prototype.keydown = function (e)
  *
  *  @param e the event
  */
-JessyInk.prototype.keypress = function (e)
+JinkSlide.prototype.keypress = function (e)
 {
 	document.onkeypress = null;
 
@@ -902,7 +905,7 @@ JessyInk.prototype.keypress = function (e)
  *
  * @returns default char code dictionary
  */
-JessyInk.prototype.getDefaultCharCodeDictionary = function()
+JinkSlide.prototype.getDefaultCharCodeDictionary = function()
 {
 	var that = this;
 	var charCodeDict = new Object();
@@ -923,7 +926,7 @@ JessyInk.prototype.getDefaultCharCodeDictionary = function()
  *
  * @returns default key code dictionary
  */
-JessyInk.prototype.getDefaultKeyCodeDictionary = function()
+JinkSlide.prototype.getDefaultKeyCodeDictionary = function()
 {
 	var that = this;
 	var keyCodeDict = new Object();
@@ -961,7 +964,7 @@ JessyInk.prototype.getDefaultKeyCodeDictionary = function()
  *
  *  Added by Santiago Jaramillo - 2012-02-01
  */
-JessyInk.prototype.nextRowInIndex = function(dir)
+JinkSlide.prototype.nextRowInIndex = function(dir)
 {
 	var nextSlide = this.activeSlide + dir*this.indexColumns;
 	if ((nextSlide>=0) && (nextSlide<this.slides.length))
@@ -981,7 +984,7 @@ JessyInk.prototype.nextRowInIndex = function(dir)
  *
  *  Added by Santiago Jaramillo - 2012-02-01
  */
-JessyInk.prototype.toggleSlideIndex = function()
+JinkSlide.prototype.toggleSlideIndex = function()
 {
     if (this.currentMode == 'slide_index')
     {
@@ -1013,7 +1016,7 @@ JessyInk.prototype.toggleSlideIndex = function()
  *
  *  Added by Santiago Jaramillo - 2012-02-01
  */
-JessyInk.prototype.displayIndex = function(topRow)
+JinkSlide.prototype.displayIndex = function(topRow)
 {
     var NCOLS = this.indexColumns;
     var row;
@@ -1080,7 +1083,7 @@ JessyInk.prototype.displayIndex = function(topRow)
  *
  *  @param toSlide index of the active slide
  */
-JessyInk.prototype.indexSetActiveSlide = function(toSlide)
+JinkSlide.prototype.indexSetActiveSlide = function(toSlide)
 {
 	if (toSlide >= this.slides.length)
 		toSlide = this.slides.length - 1;
@@ -1113,7 +1116,7 @@ JessyInk.prototype.indexSetActiveSlide = function(toSlide)
  *
  *  @param addColumn
  */
-JessyInk.prototype.changeIndexColNumber = function(addColumn)
+JinkSlide.prototype.changeIndexColNumber = function(addColumn)
 {
 	this.indexColumns += addColumn;
 	if (this.indexColumns < 2)
@@ -1131,7 +1134,7 @@ JessyInk.prototype.changeIndexColNumber = function(addColumn)
  *
  *  Added by Santiago Jaramillo - 2012-01-17
  */
-JessyInk.prototype.skipEffects = function(dir)
+JinkSlide.prototype.skipEffects = function(dir)
 {
     // FIXME: should the limits check happen here or on slideSetActiveSlide() ?
     if (((dir == 1) && (this.activeSlide < (this.slides.length - 1))) || (((dir == -1) && (this.activeSlide > 0))))
@@ -1146,16 +1149,16 @@ JessyInk.prototype.skipEffects = function(dir)
  *
  *  Added by Santiago Jaramillo - 2012-01-17
  */
-JessyInk.prototype.slideSetActiveSlide = function(toSlide)
+JinkSlide.prototype.slideSetActiveSlide = function(toSlide)
 {
     // Stop all sounds when directly setting active slide
     stopAllSounds();
     
     //this.changeSlide(1);
     this.effectArray = new Array();
-    this.effectArray[0] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), -1);
+    this.effectArray[0] = new JinkSlideEffectAppear(this.slides[this.activeSlide].getGElement(), -1);
     this.activeSlide = toSlide;
-    this.effectArray[1] = new JessyInkEffectAppear(this.slides[this.activeSlide].getGElement(), 1);
+    this.effectArray[1] = new JinkSlideEffectAppear(this.slides[this.activeSlide].getGElement(), 1);
     this.activeEffect = 0;
     this.slides[this.activeSlide].setToState(this.STATE_START);
     
@@ -1183,7 +1186,7 @@ JessyInk.prototype.slideSetActiveSlide = function(toSlide)
  *	@param	evnt	event
  *	@param	action	type of event (e.g. mouse up, mouse wheel)
  */
-JessyInk.prototype.mouseHandlerDispatch = function(evnt, action)
+JinkSlide.prototype.mouseHandlerDispatch = function(evnt, action)
 {
 	if (!evnt)
 		evnt = window.event;
@@ -1210,7 +1213,7 @@ JessyInk.prototype.mouseHandlerDispatch = function(evnt, action)
  *
  * @returns default mouse handler dictionary
  */
-JessyInk.prototype.getDefaultMouseHandlerDictionary = function()
+JinkSlide.prototype.getDefaultMouseHandlerDictionary = function()
 {
 	var mouseHandlerDict = new Object();
 
@@ -1220,7 +1223,7 @@ JessyInk.prototype.getDefaultMouseHandlerDictionary = function()
 	return mouseHandlerDict;
 };
 
-JessyInk.prototype.init = function()
+JinkSlide.prototype.init = function()
 {
 	var suspendId = this.rootNode.suspendRedraw(1000);
 
@@ -1230,9 +1233,9 @@ JessyInk.prototype.init = function()
 	this.rootNode.unsuspendRedraw(suspendId);
 	suspendId = this.rootNode.suspendRedraw(2000);
 
-	this.removeJessyInkLayer();
+	this.removeJinkSlideLayer();
 	this.hideEverything();
-	this.makeJessyInkLayer();
+	this.makeJinkSlideLayer();
 	this.defineClipPath();
 	this.defineBackground();
 	this.getSlides();
@@ -1249,14 +1252,14 @@ JessyInk.prototype.init = function()
 	document.onkeydown = function(e) { that.keydown(e); };
 };
 
-if (typeof(JESSYINK) === 'undefined')
+if (typeof(JINKSLIDE) === 'undefined')
 {
-	JESSYINK = new Object();
+	JINKSLIDE = new Object();
 }
 
-JESSYINK.main = new JessyInk();
+JINKSLIDE.main = new JinkSlide();
 
-window.onload = function() { JESSYINK.main.init(); };
+window.onload = function() { JINKSLIDE.main.init(); };
 
 // Sound functionality
 function playSound(soundFile) {
@@ -1307,7 +1310,7 @@ function stopAllSounds() {
 function playAllVisibleVideos() {
     try {
         // Get the current active slide
-        var currentSlide = JESSYINK.main.slides[JESSYINK.main.activeSlide];
+        var currentSlide = JINKSLIDE.main.slides[JINKSLIDE.main.activeSlide];
         if (!currentSlide) {
             return;
         }
@@ -1360,13 +1363,13 @@ function hasVideoRectangles(slideElement) {
 			return false;
 		}
 		
-		var jessyinkNS = 'https://launchpad.net/jessyink';
+		var jinkslideNS = 'https://github.com/sjara/jinkslide';
 		
 		// Check for groups with video attributes (new structure)
 		var allGroups = slideElement.getElementsByTagName('g');
 		for (var i = 0; i < allGroups.length; i++) {
 			var group = allGroups[i];
-			if (group.getAttributeNS(jessyinkNS, 'video-src')) {
+			if (group.getAttributeNS(jinkslideNS, 'video-src')) {
 				return true;
 			}
 		}
@@ -1375,7 +1378,7 @@ function hasVideoRectangles(slideElement) {
 		var allRects = slideElement.getElementsByTagName('rect');
 		for (var i = 0; i < allRects.length; i++) {
 			var rect = allRects[i];
-			if (rect.getAttributeNS(jessyinkNS, 'video-src')) {
+			if (rect.getAttributeNS(jinkslideNS, 'video-src')) {
 				return true;
 			}
 		}
@@ -1389,13 +1392,13 @@ function hasVideoRectangles(slideElement) {
 // Function to create and display videos based on namespace-marked elements
 function createVideoFromRect() {
 	try {
-		var presentationLayer = document.getElementById('jessyInkPresentationLayer');
+		var presentationLayer = document.getElementById('jinkSlidePresentationLayer');
 		if (!presentationLayer) {
 			console.log('Presentation layer not found');
 			return;
 		}
 		
-		var jessyinkNS = 'https://launchpad.net/jessyink';
+		var jinkslideNS = 'https://github.com/sjara/jinkslide';
 		var svgNS = 'http://www.w3.org/2000/svg';
 		var xhtmlNS = 'http://www.w3.org/1999/xhtml';
 		
@@ -1406,9 +1409,9 @@ function createVideoFromRect() {
 			var group = allGroups[i];
 			
 			// Look for groups marked with video namespace attributes
-			if (group.getAttributeNS(jessyinkNS, 'video-src')) {
+			if (group.getAttributeNS(jinkslideNS, 'video-src')) {
 				// Check if this group has already been processed
-				if (group.getAttributeNS(jessyinkNS, 'video-processed') === 'true') {
+				if (group.getAttributeNS(jinkslideNS, 'video-processed') === 'true') {
 					continue; // Skip already processed groups
 				}
 				
@@ -1419,7 +1422,7 @@ function createVideoFromRect() {
 					if (rects.length === 0) return;
 					
 					var rect = rects[0]; // Use the first rectangle in the group
-					var videoSrc = currentGroup.getAttributeNS(jessyinkNS, 'video-src');
+					var videoSrc = currentGroup.getAttributeNS(jinkslideNS, 'video-src');
 					
 					// Get rectangle dimensions
 					var rectWidth = parseFloat(rect.getAttribute('width'));
@@ -1455,19 +1458,19 @@ function createVideoFromRect() {
 					video.setAttribute('preload', 'metadata');
 					
 					// Add optional video attributes from namespace
-					if (currentGroup.getAttributeNS(jessyinkNS, 'video-controls') === 'true') {
+					if (currentGroup.getAttributeNS(jinkslideNS, 'video-controls') === 'true') {
 						video.setAttribute('controls', 'true');
 					}
 					else {
 						video.removeAttribute('controls');
 					}
-					if (currentGroup.getAttributeNS(jessyinkNS, 'video-autoplay') === 'true') {
+					if (currentGroup.getAttributeNS(jinkslideNS, 'video-autoplay') === 'true') {
 						video.setAttribute('autoplay', 'true');
 					}
-					if (currentGroup.getAttributeNS(jessyinkNS, 'video-loop') === 'true') {
+					if (currentGroup.getAttributeNS(jinkslideNS, 'video-loop') === 'true') {
 						video.setAttribute('loop', 'true');
 					}
-					if (currentGroup.getAttributeNS(jessyinkNS, 'video-muted') === 'true') {
+					if (currentGroup.getAttributeNS(jinkslideNS, 'video-muted') === 'true') {
 						video.setAttribute('muted', 'true');
 					}
 					
@@ -1499,7 +1502,7 @@ function createVideoFromRect() {
 							console.log('Using video metadata for aspect ratio:', videoAspectRatio);
 						} else {
 							// Fallback to namespace attribute or default
-							var aspectRatio = currentGroup.getAttributeNS(jessyinkNS, 'video-aspect-ratio');
+							var aspectRatio = currentGroup.getAttributeNS(jinkslideNS, 'video-aspect-ratio');
 							if (!aspectRatio) {
 								aspectRatio = '16:9'; // Default aspect ratio
 							}
@@ -1564,7 +1567,7 @@ function createVideoFromRect() {
 					currentGroup.style.display = 'none';
 					
 					// Mark this group as processed to prevent duplicate creation
-					currentGroup.setAttributeNS(jessyinkNS, 'video-processed', 'true');
+					currentGroup.setAttributeNS(jinkslideNS, 'video-processed', 'true');
 				})(group);
 			}
 		}
@@ -1589,11 +1592,11 @@ function createVideoFromRect() {
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 
-function JessyInk_core_effect_appear()
+function JinkSlide_core_effect_appear()
 {
 };
 
-JessyInk_core_effect_appear.prototype.decorateSlides = function (ji)
+JinkSlide_core_effect_appear.prototype.decorateSlides = function (ji)
 {
 	for (var slideCounter in ji.slides)
 	{
@@ -1604,13 +1607,13 @@ JessyInk_core_effect_appear.prototype.decorateSlides = function (ji)
 			{
 				var effect = ji.slides[slideCounter].elements.core_effect_appear[effectCounter];
 				
-				if ((effect.parentNode.nodeName === 'g') && !(effect.parentNode.getAttributeNS(ji.nss.inkscape, 'groupmode') === 'layer' || effect.parentNode.getAttributeNS(ji.nss.jessyink, 'module') === 'core_effect_appear'))
+				if ((effect.parentNode.nodeName === 'g') && !(effect.parentNode.getAttributeNS(ji.nss.inkscape, 'groupmode') === 'layer' || effect.parentNode.getAttributeNS(ji.nss.jinkslide, 'module') === 'core_effect_appear'))
 				{
 					var nds = effect.getElementsByTagNameNS(ji.nss.svg, 'tspan');
 
 					for (var nodeCounter = 0; nodeCounter <  nds.length; nodeCounter++)
 					{
-						if (nds[nodeCounter].getAttributeNS(ji.nss.jessyink, 'core_effect_appear') == 'order')
+						if (nds[nodeCounter].getAttributeNS(ji.nss.jinkslide, 'core_effect_appear') == 'order')
 						{
 							var order = parseInt(nds[nodeCounter].firstChild.nodeValue);
 						}
@@ -1618,7 +1621,7 @@ JessyInk_core_effect_appear.prototype.decorateSlides = function (ji)
 
 					if (order !== 'undefined' && !isNaN(order) && (order > 0))
 					{
-						ji.slides[slideCounter].addEffect(new JessyInkEffectAppear(effect.parentNode, 1), order);
+						ji.slides[slideCounter].addEffect(new JinkSlideEffectAppear(effect.parentNode, 1), order);
 					}
 				}
 			}
@@ -1631,13 +1634,13 @@ JessyInk_core_effect_appear.prototype.decorateSlides = function (ji)
 			{
 				var effect = ji.slides[slideCounter].elements.core_effect_disappear[effectCounter];
 				
-				if ((effect.parentNode.nodeName === 'g') && !(effect.parentNode.getAttributeNS(ji.nss.inkscape, 'groupmode') === 'layer' || effect.parentNode.getAttributeNS(ji.nss.jessyink, 'module') === 'core_effect_appear'))
+				if ((effect.parentNode.nodeName === 'g') && !(effect.parentNode.getAttributeNS(ji.nss.inkscape, 'groupmode') === 'layer' || effect.parentNode.getAttributeNS(ji.nss.jinkslide, 'module') === 'core_effect_appear'))
 				{
 					var nds = effect.getElementsByTagNameNS(ji.nss.svg, 'tspan');
 
 					for (var nodeCounter = 0; nodeCounter <  nds.length; nodeCounter++)
 					{
-						if (nds[nodeCounter].getAttributeNS(ji.nss.jessyink, 'core_effect_disappear') == 'order')
+						if (nds[nodeCounter].getAttributeNS(ji.nss.jinkslide, 'core_effect_disappear') == 'order')
 						{
 							var order = parseInt(nds[nodeCounter].firstChild.nodeValue);
 						}
@@ -1645,7 +1648,7 @@ JessyInk_core_effect_appear.prototype.decorateSlides = function (ji)
 
 					if (order !== 'undefined' && !isNaN(order) && (order > 0))
 					{
-						ji.slides[slideCounter].addEffect(new JessyInkEffectAppear(effect.parentNode, -1), order);
+						ji.slides[slideCounter].addEffect(new JinkSlideEffectAppear(effect.parentNode, -1), order);
 					}
 				}
 			}
@@ -1653,7 +1656,7 @@ JessyInk_core_effect_appear.prototype.decorateSlides = function (ji)
 	}
 };
 
-function JessyInkEffectAppear(element, direction)
+function JinkSlideEffectAppear(element, direction)
 {
 	this.gElement = element;
 	this.baseDirection = direction;
@@ -1661,7 +1664,7 @@ function JessyInkEffectAppear(element, direction)
 	return this;
 }
 
-JessyInkEffectAppear.prototype.playEffect = function (dir, time)
+JinkSlideEffectAppear.prototype.playEffect = function (dir, time)
 {
 	if ((dir * this.baseDirection) == 1)
 	{
@@ -1677,15 +1680,15 @@ JessyInkEffectAppear.prototype.playEffect = function (dir, time)
 	return true;
 };
 
-if (typeof(JESSYINK) === 'undefined')
+if (typeof(JINKSLIDE) === 'undefined')
 {
-	JESSYINK = new Object();
+	JINKSLIDE = new Object();
 }
 
-if (typeof(JESSYINK.modules) === 'undefined')
+if (typeof(JINKSLIDE.modules) === 'undefined')
 {
-	JESSYINK.modules = new Object();
+	JINKSLIDE.modules = new Object();
 }
 
-JESSYINK.modules.core_effect_appear = new JessyInk_core_effect_appear();
+JINKSLIDE.modules.core_effect_appear = new JinkSlide_core_effect_appear();
 
