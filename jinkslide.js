@@ -18,6 +18,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 
+// Version information. Update with tools/bump_version.py, which also
+// stamps the version label in jinkslide.svg.
+var JINKSLIDE_VERSION = "1.0.0";
+var JINKSLIDE_DATE = "2026-09-19";
+
 function Slide(groupElement, clipPathId, slideBackgroundId)
 {
 	// States.
@@ -1259,7 +1264,22 @@ if (typeof(JINKSLIDE) === 'undefined')
 
 JINKSLIDE.main = new JinkSlide();
 
-window.onload = function() { JINKSLIDE.main.init(); };
+// Show the running version in the label of the SVG (marked with
+// jinkslide:role="version"); the text stored in the SVG is only a baseline.
+function updateVersionLabel()
+{
+	var jinkslideNs = 'https://github.com/sjara/jinkslide';
+	var tspans = document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'tspan');
+	for (var indTspan = 0; indTspan < tspans.length; indTspan++)
+	{
+		if (tspans[indTspan].getAttributeNS(jinkslideNs, 'role') == 'version')
+		{
+			tspans[indTspan].textContent = 'v' + JINKSLIDE_VERSION + ' (' + JINKSLIDE_DATE + ')';
+		}
+	}
+}
+
+window.onload = function() { updateVersionLabel(); JINKSLIDE.main.init(); };
 
 // Sound functionality
 function playSound(soundFile) {
