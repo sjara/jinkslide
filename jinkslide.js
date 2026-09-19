@@ -1,6 +1,6 @@
-// 
+// jinkslide.js
 //
-// Copyright 2012 Santiago Jaramillo
+// Copyright 2012-2026 Santiago Jaramillo
 // Copyright 2008, 2009, 2010 Hannes Hochreiner
 //
 // Originally based on JessyInk (https://launchpad.net/jessyink) by Hannes Hochreiner.
@@ -1578,6 +1578,11 @@ function createVideoFromRect() {
 
 
 
+// ---------------------------------------------------------------------
+// Appear/disappear effect module — derived from JessyInk's
+// core_effect_appear.js (https://launchpad.net/jessyink).
+// ---------------------------------------------------------------------
+//
 // Copyright 2008, 2009, 2010 Hannes Hochreiner
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
