@@ -21,16 +21,14 @@ original is saved next to it as <name>.svg.bak (replacing any earlier
 backup).
 
 Usage:
-    tools/update_svg.py SVG --output OUTPUT_SVG [--js-dir JS_DIR]
-    tools/update_svg.py SVG --in-place [--js-dir JS_DIR]
+    update_svg.py SVG --output OUTPUT_SVG [--js-dir JS_DIR]
+    update_svg.py SVG --in-place [--js-dir JS_DIR]
 """
 
 import argparse
 import re
 import sys
 from pathlib import Path
-
-from bump_version import DATE_RE, LABEL_RE, VERSION_RE
 
 # Matches both <script ...>...</script> and the self-closing <script ... />
 # form that Inkscape writes for scripts with no inline content.
@@ -41,8 +39,12 @@ SCRIPTNAME_RE = re.compile(r'[\w-]+:scriptname="([^"]+)"')
 SVG_OPEN_TAG_RE = re.compile(r"<svg\b[^>]*>", re.DOTALL)
 NAMESPACE_URI = "https://github.com/sjara/jinkslide"
 NAMESPACE_RE = re.compile(r'xmlns:([\w-]+)="' + re.escape(NAMESPACE_URI) + '"')
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
 MAIN_SCRIPT = "jinkslide.js"
+# Version fields in jinkslide.js, and the version label stored in an SVG.
+VERSION_RE = re.compile(r'(var JINKSLIDE_VERSION = ")([^"]*)(";)')
+DATE_RE = re.compile(r'(var JINKSLIDE_DATE = ")([^"]*)(";)')
+LABEL_RE = re.compile(r'(role="version">)[^<]*(</tspan>)')
 
 
 def escape_js(jsText):
@@ -55,6 +57,12 @@ def escape_js(jsText):
         .replace(">", "&gt;")
         .replace('"', "&quot;")
     )
+
+
+def stamp_label(svgText, label):
+    """Set the version label stored in the SVG (the element marked with
+    jinkslide:role="version"), if it has one."""
+    return LABEL_RE.sub(lambda match: match.group(1) + label + match.group(2), svgText)
 
 
 def add_script(svgText, jsText):
@@ -140,8 +148,7 @@ def update_svg(svgPath, outputPath, jsDir=ROOT):
         versionMatch, dateMatch = VERSION_RE.search(jsText), DATE_RE.search(jsText)
         if versionMatch and dateMatch:
             label = f"v{versionMatch.group(2)} ({dateMatch.group(2)})"
-            stampedText = LABEL_RE.sub(lambda match: match.group(1) + label + match.group(2),
-                                       outputText)
+            stampedText = stamp_label(outputText, label)
             if stampedText != outputText:
                 outputText, newLabel = stampedText, label
             break

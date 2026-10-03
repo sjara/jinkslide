@@ -18,7 +18,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 
-// Version information. Update with tools/bump_version.py, which also
+// Version information. Update with bump_version.py, which also
 // stamps the version label in the SVG files.
 var JINKSLIDE_VERSION = "1.1.0";
 var JINKSLIDE_DATE = "2026-10-03";

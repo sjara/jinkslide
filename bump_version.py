@@ -5,7 +5,7 @@ root that has one, so that the correct version is visible even in editors
 that do not run scripts.
 
 Usage:
-    tools/bump_version.py VERSION [--date YYYY-MM-DD]
+    bump_version.py VERSION [--date YYYY-MM-DD]
 
 VERSION is either a semantic version (e.g. 0.2.0) or one of
 "major", "minor", "patch" to increment the current version.
@@ -16,14 +16,10 @@ import argparse
 import datetime
 import re
 import sys
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-JS_PATH = ROOT / "jinkslide.js"
+from update_svg import DATE_RE, LABEL_RE, MAIN_SCRIPT, ROOT, VERSION_RE, stamp_label
 
-VERSION_RE = re.compile(r'(var JINKSLIDE_VERSION = ")([^"]*)(";)')
-DATE_RE = re.compile(r'(var JINKSLIDE_DATE = ")([^"]*)(";)')
-LABEL_RE = re.compile(r'(role="version">)[^<]*(</tspan>)')
+JS_PATH = ROOT / MAIN_SCRIPT
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+$")
 
 
@@ -63,7 +59,7 @@ def main():
 
     JS_PATH.write_text(jsText)
     for svgPath, svgText in svgTexts.items():
-        svgPath.write_text(LABEL_RE.sub(lambda match: match.group(1) + label + match.group(2), svgText))
+        svgPath.write_text(stamp_label(svgText, label))
     print(f"{current} -> {newVersion} ({args.date})")
     if svgTexts:
         print("Stamped: " + ", ".join(svgPath.name for svgPath in svgTexts))

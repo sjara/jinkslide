@@ -54,25 +54,25 @@
 
 ## Development Workflow: Split vs. Merged SVG
 
-The JavaScript can live in two forms, and the tools in `tools/` convert between them:
+The JavaScript can live in two forms, and the Python scripts in the project root convert between them:
 
 - **Dev SVG (split)**: the SVG (e.g., `template.svg`) loads the engine with `<script xlink:href="jinkslide.js">`. The JS is a normal file that can be edited with any editor, diffed cleanly in git, and tested by reloading the SVG in a browser. No build step is needed. This is the working form and what is kept in the repository.
-- **Distribution SVG (merged)**: a single self-contained SVG with the JS inlined (and escaped) inside the `<script>` element, with no external dependencies apart from media files such as videos and sounds. This is the form to send to others, and the form to start a new presentation from: `tools/update_svg.py template.svg --output mytalk.svg`. Running `tools/update_svg.py mytalk.svg --in-place` later upgrades it to the current JS.
+- **Distribution SVG (merged)**: a single self-contained SVG with the JS inlined (and escaped) inside the `<script>` element, with no external dependencies apart from media files such as videos and sounds. This is the form to send to others, and the form to start a new presentation from: `update_svg.py template.svg --output mytalk.svg`. Running `update_svg.py mytalk.svg --in-place` later upgrades it to the current JS.
 
 | Tool | Purpose |
 |------|---------|
-| `tools/update_svg.py SVG (--output OUT \| --in-place) [--js-dir DIR]` | Merge or upgrade: put the current `jinkslide.js` inside the SVG, written to `OUT` or, with `--in-place`, over the SVG itself (the original is kept as `<name>.svg.bak`). Inlines a linked script, replaces an already-inlined one, or adds one if the SVG has none, and stamps the version label to match. The JS is read from next to the SVG or else from `DIR` (default: the project root) |
-| `tools/split_svg.py SOURCE_SVG [--dev-svg DEV] [--js-dir DIR]` | Split: extract inline scripts (identified by `jinkslide:scriptname`) to `.js` files and link them via `xlink:href` |
-| `tools/bump_version.py VERSION [--date D]` | Set the version and stamp the label in every SVG in the project root that has one |
+| `update_svg.py SVG (--output OUT \| --in-place) [--js-dir DIR]` | Merge or upgrade: put the current `jinkslide.js` inside the SVG, written to `OUT` or, with `--in-place`, over the SVG itself (the original is kept as `<name>.svg.bak`). Inlines a linked script, replaces an already-inlined one, or adds one if the SVG has none, and stamps the version label to match. The JS is read from next to the SVG or else from `DIR` (default: the project root) |
+| `split_svg.py SOURCE_SVG [--dev-svg DEV] [--js-dir DIR]` | Split: extract inline scripts (identified by `jinkslide:scriptname`) to `.js` files and link them via `xlink:href` |
+| `bump_version.py VERSION [--date D]` | Set the version and stamp the label in every SVG in the project root that has one |
 
 Note that Inkscape does not run scripts, so it shows only the text stored in the SVG file. Keep this in mind for anything the JS generates at load time.
 
 ### Design decisions
 
-- **No merged SVG in the repository**: `template.svg` and `example.svg` are kept in split form. A merged file is generated with `tools/update_svg.py` when needed, so there is a single copy of the JS and nothing to drift from `jinkslide.js`.
-- **Explicit destination**: `tools/update_svg.py` requires `--output` or `--in-place`, so running it on an SVG by mistake (including the ones in this repository) writes nothing. `--in-place` keeps one backup, `<name>.svg.bak`, replaced on each update; the `.bak` ending keeps it out of `*.svg` globs such as the one in `tools/bump_version.py`.
+- **No merged SVG in the repository**: `template.svg` and `example.svg` are kept in split form. A merged file is generated with `update_svg.py` when needed, so there is a single copy of the JS and nothing to drift from `jinkslide.js`.
+- **Explicit destination**: `update_svg.py` requires `--output` or `--in-place`, so running it on an SVG by mistake (including the ones in this repository) writes nothing. `--in-place` keeps one backup, `<name>.svg.bak`, replaced on each update; the `.bak` ending keeps it out of `*.svg` globs such as the one in `bump_version.py`.
 - **Any namespace prefix**: the tools find attributes such as `scriptname` and `role` whatever prefix is bound to the jinkslide namespace, so SVGs made when the prefix was `ns1:` keep working. The JS looks attributes up by namespace URI, not by prefix.
-- **No SVG file names in the code**: `tools/bump_version.py` stamps every SVG in the project root that has a version label, and the other tools take the SVG as an argument.
+- **No SVG file names in the code**: `bump_version.py` stamps every SVG in the project root that has a version label, and the other tools take the SVG as an argument.
 
 ## Versioning
 
@@ -85,7 +85,7 @@ var JINKSLIDE_DATE = "2026-10-03";
 
 - **In the browser**: on load, `updateVersionLabel()` writes `vX.Y.Z (date)` into the title-slide label, i.e., the `tspan` marked with `jinkslide:role="version"`. The label therefore always reflects the JS that is actually running.
 - **In Inkscape**: the same text is stored in the SVG as a baseline, so the version is visible even without running scripts.
-- **Releasing**: run `tools/bump_version.py patch|minor|major` (or an explicit `X.Y.Z`). It updates both the JS constants and the SVG label, so they cannot drift apart. Then commit and tag: `git commit -am "Release vX.Y.Z" && git tag vX.Y.Z`. Use semantic versioning (minor for new features, patch for fixes).
+- **Releasing**: run `bump_version.py patch|minor|major` (or an explicit `X.Y.Z`). It updates both the JS constants and the SVG label, so they cannot drift apart. Then commit and tag: `git commit -am "Release vX.Y.Z" && git tag vX.Y.Z`. Use semantic versioning (minor for new features, patch for fixes).
 - **Copied decks**: a presentation made by copying the SVG keeps the stored label from when it was made until it is opened in a browser, where it shows the running JS version.
 
 ## Technical Details

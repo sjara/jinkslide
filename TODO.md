@@ -9,8 +9,8 @@ Potential improvements for jinkslide.
 
 ## To verify
 
-- [ ] Open in a browser a merged presentation made with `tools/update_svg.py` (from `template.svg`, and from `example.svg` with its video and sound).
-- [ ] Test in a browser the case where `tools/update_svg.py` adds a `<script>` element to an SVG that has none (so far only checked to be well-formed XML).
+- [ ] Open in a browser a merged presentation made with `update_svg.py` (from `template.svg`, and from `example.svg` with its video and sound).
+- [ ] Test in a browser the case where `update_svg.py` adds a `<script>` element to an SVG that has none (so far only checked to be well-formed XML).
 - [ ] Check in Inkscape and a browser how the appear/disappear widgets look now that the old `2.0.0-alpha-1` label is gone.
 - [ ] Review the "Building slides" section and the credit sentence in `README.md`; they were written from reading the code, not from use.
 
@@ -21,5 +21,5 @@ Potential improvements for jinkslide.
 
 ## Done
 
-- [x] v1.0.0 release: version constants, `tools/bump_version.py`, documented workflow
-- [x] v1.1.0 release: `template.svg` and `example.svg` replace `jinkslide.svg`, `tools/update_svg.py` replaces `build_svg.py`, `jinkslide:` namespace prefix, merged into the original repository
+- [x] v1.0.0 release: version constants, `bump_version.py`, documented workflow
+- [x] v1.1.0 release: `template.svg` and `example.svg` replace `jinkslide.svg`, `update_svg.py` replaces `build_svg.py`, `jinkslide:` namespace prefix, merged into the original repository

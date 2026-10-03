@@ -17,7 +17,7 @@ JavaScript, so there is nothing to install on the computer you present from.
 
 1. Create your presentation from the template:
    ```
-   python3 tools/update_svg.py template.svg --output mytalk.svg
+   python3 update_svg.py template.svg --output mytalk.svg
    ```
    This copies `template.svg` and puts the jinkslide code inside the copy.
 2. Open `mytalk.svg` in Inkscape. Add one layer per slide, in the order they
@@ -69,7 +69,7 @@ A presentation keeps the version of the code it was created with, shown on
 the label of the first layer. To upgrade it to the code in this repository:
 
 ```
-python3 tools/update_svg.py mytalk.svg --in-place
+python3 update_svg.py mytalk.svg --in-place
 ```
 
 The previous file is kept as `mytalk.svg.bak`.
@@ -78,8 +78,8 @@ The previous file is kept as `mytalk.svg.bak`.
 
 The code lives in `jinkslide.js`. `template.svg` and `example.svg` load it
 from that file, so changes can be tested by reloading the SVG in a browser.
-See [DESCRIPTION.md](DESCRIPTION.md) for how the system works, the tools in
-`tools/` and the release procedure, and [TODO.md](TODO.md) for planned
+See [DESCRIPTION.md](DESCRIPTION.md) for how the system works, the Python
+scripts and the release procedure, and [TODO.md](TODO.md) for planned
 improvements.
 
 ## Credits and license

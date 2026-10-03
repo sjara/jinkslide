@@ -13,7 +13,7 @@ after editing the .js files, with no build step. Use update_svg.py to
 inline everything back together for distribution.
 
 Usage:
-    tools/split_svg.py SOURCE_SVG [--dev-svg DEV_SVG] [--js-dir JS_DIR]
+    split_svg.py SOURCE_SVG [--dev-svg DEV_SVG] [--js-dir JS_DIR]
 """
 
 import argparse
