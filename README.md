@@ -78,7 +78,7 @@ The previous file is kept as `mytalk.svg.bak`.
 
 The code lives in `jinkslide.js`. `template.svg` and `example.svg` load it
 from that file, so changes can be tested by reloading the SVG in a browser.
-See [DESCRIPTION.md](DESCRIPTION.md) for how the system works, the Python
+See [ARCHITECTURE.md](ARCHITECTURE.md) for how the system works, the Python
 scripts and the release procedure, and [TODO.md](TODO.md) for planned
 improvements.
 
