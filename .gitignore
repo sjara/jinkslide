@@ -1,3 +1,5 @@
 *.wav
 *.mp4
 old/
+__pycache__/
+*.svg.bak

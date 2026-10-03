@@ -56,12 +56,12 @@
 
 The JavaScript can live in two forms, and the tools in `tools/` convert between them:
 
-- **Dev SVG (split)**: the SVG (e.g., `template.svg`, the starting point for a new presentation) loads the engine with `<script xlink:href="jinkslide.js">`. The JS is a normal file that can be edited with any editor, diffed cleanly in git, and tested by reloading the SVG in a browser. No build step is needed. This is the working form and what is kept in the repository.
-- **Distribution SVG (merged)**: a single self-contained SVG with the JS inlined (and escaped) inside the `<script>` element, with no external dependencies apart from media files such as videos and sounds. This is the form to send to others.
+- **Dev SVG (split)**: the SVG (e.g., `template.svg`) loads the engine with `<script xlink:href="jinkslide.js">`. The JS is a normal file that can be edited with any editor, diffed cleanly in git, and tested by reloading the SVG in a browser. No build step is needed. This is the working form and what is kept in the repository.
+- **Distribution SVG (merged)**: a single self-contained SVG with the JS inlined (and escaped) inside the `<script>` element, with no external dependencies apart from media files such as videos and sounds. This is the form to send to others, and the form to start a new presentation from: `tools/update_svg.py template.svg --output mytalk.svg`. Running `tools/update_svg.py mytalk.svg --in-place` later upgrades it to the current JS.
 
 | Tool | Purpose |
 |------|---------|
-| `tools/build_svg.py DEV_SVG [--output OUT]` | Merge: inline `jinkslide.js` into the SVG (default output `jinkslide_dist.svg`) |
+| `tools/update_svg.py SVG (--output OUT \| --in-place) [--js-dir DIR]` | Merge or upgrade: put the current `jinkslide.js` inside the SVG, written to `OUT` or, with `--in-place`, over the SVG itself (the original is kept as `<name>.svg.bak`). Inlines a linked script, replaces an already-inlined one, or adds one if the SVG has none, and stamps the version label to match. The JS is read from next to the SVG or else from `DIR` (default: the project root) |
 | `tools/split_svg.py SOURCE_SVG [--dev-svg DEV] [--js-dir DIR]` | Split: extract inline scripts (identified by `ns1:scriptname`) to `.js` files and link them via `xlink:href` |
 | `tools/bump_version.py VERSION [--date D]` | Set the version and stamp the label in every SVG in the project root that has one |
 

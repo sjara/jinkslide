@@ -9,7 +9,7 @@ each <script> element in the output SVG to load that file externally via
 xlink:href, instead of embedding the code inline.
 
 The resulting "dev" SVG can be opened directly in a browser and re-opened
-after editing the .js files, with no build step. Use build_svg.py to
+after editing the .js files, with no build step. Use update_svg.py to
 inline everything back together for distribution.
 
 Usage:
@@ -23,7 +23,8 @@ import sys
 from pathlib import Path
 
 SCRIPT_TAG_RE = re.compile(r"<script\b([^>]*)>(.*?)</script>", re.DOTALL)
-SCRIPTNAME_RE = re.compile(r'ns1:scriptname="([^"]+)"')
+# The jinkslide namespace prefix varies between files (ns1:, jinkslide:, ...).
+SCRIPTNAME_RE = re.compile(r'[\w-]+:scriptname="([^"]+)"')
 SVG_OPEN_TAG_RE = re.compile(r"<svg\b[^>]*>", re.DOTALL)
 
 
@@ -53,7 +54,7 @@ def split_svg(sourcePath, devSvgPath, jsDir, jsRelDir):
         attrs, rawContent = match.group(1), match.group(2)
         nameMatch = SCRIPTNAME_RE.search(attrs)
         if not nameMatch:
-            raise ValueError(f"<script> tag without ns1:scriptname: {match.group(0)[:80]!r}")
+            raise ValueError(f"<script> tag without a scriptname attribute: {match.group(0)[:80]!r}")
         scriptName = nameMatch.group(1)
 
         jsPath = jsDir / scriptName
