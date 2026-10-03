@@ -67,13 +67,20 @@ The JavaScript can live in two forms, and the tools in `tools/` convert between 
 
 Note that Inkscape does not run scripts, so it shows only the text stored in the SVG file. Keep this in mind for anything the JS generates at load time.
 
+### Design decisions
+
+- **No merged SVG in the repository**: `template.svg` and `example.svg` are kept in split form. A merged file is generated with `tools/update_svg.py` when needed, so there is a single copy of the JS and nothing to drift from `jinkslide.js`.
+- **Explicit destination**: `tools/update_svg.py` requires `--output` or `--in-place`, so running it on an SVG by mistake (including the ones in this repository) writes nothing. `--in-place` keeps one backup, `<name>.svg.bak`, replaced on each update; the `.bak` ending keeps it out of `*.svg` globs such as the one in `tools/bump_version.py`.
+- **Any namespace prefix**: the tools find attributes such as `scriptname` and `role` whatever prefix is bound to the jinkslide namespace, so SVGs made when the prefix was `ns1:` keep working. The JS looks attributes up by namespace URI, not by prefix.
+- **No SVG file names in the code**: `tools/bump_version.py` stamps every SVG in the project root that has a version label, and the other tools take the SVG as an argument.
+
 ## Versioning
 
 The version is defined once, near the top of `jinkslide.js`:
 
 ```js
-var JINKSLIDE_VERSION = "1.0.0";
-var JINKSLIDE_DATE = "2026-09-19";
+var JINKSLIDE_VERSION = "1.1.0";
+var JINKSLIDE_DATE = "2026-10-03";
 ```
 
 - **In the browser**: on load, `updateVersionLabel()` writes `vX.Y.Z (date)` into the title-slide label, i.e., the `tspan` marked with `jinkslide:role="version"`. The label therefore always reflects the JS that is actually running.

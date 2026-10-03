@@ -1,8 +1,8 @@
 # jinkslide
 
-Make slide presentations as SVG files: draw the slides in
-[Inkscape](https://inkscape.org/), one layer per slide, and present them in
-any web browser. A presentation is a single SVG file that carries its own
+A tool for creating slides in SVG format. You draw the slides
+in [Inkscape](https://inkscape.org/) (one layer per slide) and present them
+in any web browser. A presentation is a single SVG file that carries its own
 JavaScript, so there is nothing to install on the computer you present from.
 
 ## Features
