@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Set the jinkslide version in jinkslide.js and stamp the version label
-(the element marked with ns1:role="version") in every SVG in the project
+(the element marked with jinkslide:role="version") in every SVG in the project
 root that has one, so that the correct version is visible even in editors
 that do not run scripts.
 

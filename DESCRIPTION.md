@@ -36,7 +36,7 @@
 
 ### Enhanced Features
 
-1. **Background Setter**: Groups marked with `ns1:background-setter="true"` can change the presentation background color based on rectangles within them
+1. **Background Setter**: Groups marked with `jinkslide:background-setter="true"` can change the presentation background color based on rectangles within them
 
 2. **Sound Support**: 
    - `playSound()` function plays audio files
@@ -44,7 +44,7 @@
    - Automatic sound stopping when changing slides
 
 3. **Video Support**: 
-   - Groups with `ns1:video-src` attributes get converted to HTML5 video elements
+   - Groups with `jinkslide:video-src` attributes get converted to HTML5 video elements
    - Maintains aspect ratio within defined rectangles
    - Supports controls, autoplay, loop, and muted attributes
    - Uses `foreignObject` to embed HTML video in SVG
@@ -62,7 +62,7 @@ The JavaScript can live in two forms, and the tools in `tools/` convert between 
 | Tool | Purpose |
 |------|---------|
 | `tools/update_svg.py SVG (--output OUT \| --in-place) [--js-dir DIR]` | Merge or upgrade: put the current `jinkslide.js` inside the SVG, written to `OUT` or, with `--in-place`, over the SVG itself (the original is kept as `<name>.svg.bak`). Inlines a linked script, replaces an already-inlined one, or adds one if the SVG has none, and stamps the version label to match. The JS is read from next to the SVG or else from `DIR` (default: the project root) |
-| `tools/split_svg.py SOURCE_SVG [--dev-svg DEV] [--js-dir DIR]` | Split: extract inline scripts (identified by `ns1:scriptname`) to `.js` files and link them via `xlink:href` |
+| `tools/split_svg.py SOURCE_SVG [--dev-svg DEV] [--js-dir DIR]` | Split: extract inline scripts (identified by `jinkslide:scriptname`) to `.js` files and link them via `xlink:href` |
 | `tools/bump_version.py VERSION [--date D]` | Set the version and stamp the label in every SVG in the project root that has one |
 
 Note that Inkscape does not run scripts, so it shows only the text stored in the SVG file. Keep this in mind for anything the JS generates at load time.
@@ -76,7 +76,7 @@ var JINKSLIDE_VERSION = "1.0.0";
 var JINKSLIDE_DATE = "2026-09-19";
 ```
 
-- **In the browser**: on load, `updateVersionLabel()` writes `vX.Y.Z (date)` into the title-slide label, i.e., the `tspan` marked with `ns1:role="version"`. The label therefore always reflects the JS that is actually running.
+- **In the browser**: on load, `updateVersionLabel()` writes `vX.Y.Z (date)` into the title-slide label, i.e., the `tspan` marked with `jinkslide:role="version"`. The label therefore always reflects the JS that is actually running.
 - **In Inkscape**: the same text is stored in the SVG as a baseline, so the version is visible even without running scripts.
 - **Releasing**: run `tools/bump_version.py patch|minor|major` (or an explicit `X.Y.Z`). It updates both the JS constants and the SVG label, so they cannot drift apart. Then commit and tag: `git commit -am "Release vX.Y.Z" && git tag vX.Y.Z`. Use semantic versioning (minor for new features, patch for fixes).
 - **Copied decks**: a presentation made by copying the SVG keeps the stored label from when it was made until it is opened in a browser, where it shows the running JS version.
@@ -84,11 +84,11 @@ var JINKSLIDE_DATE = "2026-09-19";
 ## Technical Details
 
 ### Namespace Usage
-The system uses the `jinkslide` namespace (`https://github.com/sjara/jinkslide`, bound to the `ns1` prefix in the SVG files) extensively for:
-- `ns1:background-setter`: Marks background color setters
-- `ns1:video-src`: Specifies video source files
-- `ns1:color-rect`: Marks interactive color-changing rectangles
-- `ns1:core_effect_appear`: Defines appear effect order
+The system uses the `jinkslide` namespace (`https://github.com/sjara/jinkslide`, bound to the `jinkslide` prefix in the SVG files) extensively for:
+- `jinkslide:background-setter`: Marks background color setters
+- `jinkslide:video-src`: Specifies video source files
+- `jinkslide:color-rect`: Marks interactive color-changing rectangles
+- `jinkslide:core_effect_appear`: Defines appear effect order
 
 ### Escaping special characters
 Because the Javascript code is inside an SVG file, characters like <, >, &, " in the javascript inside the SVG file need to be escaped using &lt;, &gt;, &amp;, &quot;. Curly braces do not need to be escaped.

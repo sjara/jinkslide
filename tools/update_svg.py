@@ -7,13 +7,13 @@ jinkslide code inside it, whatever state the SVG starts in.
   file is read from next to the SVG, or else from <js-dir>, so a
   presentation need not sit beside the code.
 - A <script> element with the code already inlined, identified by its
-  ns1:scriptname="some_name.js" attribute, has its content replaced with
+  jinkslide:scriptname="some_name.js" attribute, has its content replaced with
   the current <js-dir>/some_name.js.
 - If the SVG has no jinkslide <script> element at all, one is added.
 
 The characters that must be escaped inside SVG (<, >, &, ") are escaped
 in the inlined code, and the version label stored in the SVG (the element
-marked with ns1:role="version") is stamped with the version of that code.
+marked with jinkslide:role="version") is stamped with the version of that code.
 
 The result is written to --output, leaving the SVG untouched, or with
 --in-place over the SVG itself. Before an SVG is overwritten in place, the
@@ -36,7 +36,7 @@ from bump_version import DATE_RE, LABEL_RE, VERSION_RE
 # form that Inkscape writes for scripts with no inline content.
 SCRIPT_TAG_RE = re.compile(r"<script\b([^>]*?)(?:/>|>(.*?)</script>)", re.DOTALL)
 HREF_RE = re.compile(r'\s*xlink:href="([^"]+)"')
-# The jinkslide namespace prefix varies between files (ns1:, jinkslide:, ...).
+# Older files bind the jinkslide namespace to another prefix (e.g., ns1:).
 SCRIPTNAME_RE = re.compile(r'[\w-]+:scriptname="([^"]+)"')
 SVG_OPEN_TAG_RE = re.compile(r"<svg\b[^>]*>", re.DOTALL)
 NAMESPACE_URI = "https://github.com/sjara/jinkslide"
@@ -110,7 +110,7 @@ def update_svg(svgPath, outputPath, jsDir=ROOT):
             jsText = read_js(jsPath, "referenced by")
         elif nameMatch:
             scriptName = nameMatch.group(1)
-            jsText = read_js(jsDir / scriptName, "named by ns1:scriptname in")
+            jsText = read_js(jsDir / scriptName, "named by jinkslide:scriptname in")
         else:
             # Not a jinkslide script; leave as-is.
             return match.group(0)

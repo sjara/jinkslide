@@ -2,7 +2,7 @@
 """Split a combined jinkslide SVG into a dev SVG plus external .js files.
 
 Each <script> element in the SVG is expected to carry an
-ns1:scriptname="some_name.js" attribute identifying which file its
+jinkslide:scriptname="some_name.js" attribute identifying which file its
 contents belong to. This tool writes that content out to <js-dir>/<scriptname>
 (unescaping the XML entities required inside an SVG document) and rewrites
 each <script> element in the output SVG to load that file externally via
@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 SCRIPT_TAG_RE = re.compile(r"<script\b([^>]*)>(.*?)</script>", re.DOTALL)
-# The jinkslide namespace prefix varies between files (ns1:, jinkslide:, ...).
+# Older files bind the jinkslide namespace to another prefix (e.g., ns1:).
 SCRIPTNAME_RE = re.compile(r'[\w-]+:scriptname="([^"]+)"')
 SVG_OPEN_TAG_RE = re.compile(r"<svg\b[^>]*>", re.DOTALL)
 

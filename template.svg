@@ -17,7 +17,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:ns1="https://github.com/sjara/jinkslide">
+   xmlns:jinkslide="https://github.com/sjara/jinkslide">
   <defs
      id="defs6158">
     <inkscape:perspective
@@ -69,8 +69,8 @@
        style="display:inline;enable-background:new"
        id="g2739"
        transform="matrix(0.5016217,0,0,0.5106316,-498.19982,-49.519778)"
-       ns1:element="core_effect_appear"
-       ns1:lockstate="unlocked">
+       jinkslide:element="core_effect_appear"
+       jinkslide:lockstate="unlocked">
       <rect
          rx="25"
          id="rect2717"
@@ -80,7 +80,7 @@
          y="98.757324"
          ry="25"
          style="fill:#c0c0c0;fill-opacity:1;stroke:#4b4b4b;stroke-width:3.55964;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         ns1:lockstate="unlocked" />
+         jinkslide:lockstate="unlocked" />
       <path
          sodipodi:type="star"
          style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.44954;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -138,13 +138,13 @@
          x="890.69647"
          y="207.81158"
          id="text2729"
-         ns1:lockstate="unlocked"><tspan
+         jinkslide:lockstate="unlocked"><tspan
            sodipodi:role="line"
            id="tspan2727"
            x="890.69647"
            y="207.81158"
-           ns1:core_effect_appear="order"
-           ns1:lockstate="unlocked"
+           jinkslide:core_effect_appear="order"
+           jinkslide:lockstate="unlocked"
            style="font-size:39.5174px;line-height:1.25">0</tspan></text>
       <text
          xml:space="preserve"
@@ -170,7 +170,7 @@
            id="tspan2735"
            x="936.5697"
            y="239.61955"
-           ns1:version="version"
+           jinkslide:version="version"
            sodipodi:insensitive="true"
            style="font-size:16.0184px;line-height:1.25">2.0.0-alpha-1</tspan></text>
     </g>
@@ -179,9 +179,9 @@
        id="jinkslide-bg"
        style="display:inline"
        transform="translate(-166.41369,460)"
-       ns1:background-setter="true">
+       jinkslide:background-setter="true">
       <rect
-         ns1:lockstate="unlocked"
+         jinkslide:lockstate="unlocked"
          style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#4b4b4b;stroke-width:1.80156;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
          ry="8"
          y="-54.820038"
@@ -203,13 +203,13 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#808080">background</tspan></text>
     </g>
     <g
-       ns1:module="core_main"
-       ns1:lockstate="unlocked"
+       jinkslide:module="core_main"
+       jinkslide:lockstate="unlocked"
        transform="translate(-417.65766,490.10301)"
        id="jinkslide-main"
        style="display:inline;enable-background:new">
       <rect
-         ns1:lockstate="unlocked"
+         jinkslide:lockstate="unlocked"
          rx="29.763779"
          id="rect2555"
          width="255.1181"
@@ -220,7 +220,7 @@
          style="fill:#c0c0c0;fill-opacity:1;stroke:#4b4b4b;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <script
          sodipodi:insensitive="true"
-         ns1:scriptname="jinkslide.js"
+         jinkslide:scriptname="jinkslide.js"
          id="script68"
          xlink:href="jinkslide.js" />
       <text
@@ -245,13 +245,13 @@
            y="247.354"
            x="271.01245"
            sodipodi:role="line"
-           ns1:role="version">v1.0.0 (2026-09-19)</tspan></text>
+           jinkslide:role="version">v1.0.0 (2026-09-19)</tspan></text>
     </g>
     <g
        style="display:inline;enable-background:new"
        id="jinkslide-appear-container"
-       ns1:module="core_effect_appear"
-       ns1:lockstate="unlocked"
+       jinkslide:module="core_effect_appear"
+       jinkslide:lockstate="unlocked"
        transform="matrix(0.5,0,0,0.5,-705.13172,404.78363)">
       <rect
          rx="25"
@@ -262,7 +262,7 @@
          y="132.46603"
          ry="25"
          style="fill:#808080;fill-opacity:1;stroke:#4b4b4b;stroke-width:4.44954;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         ns1:lockstate="unlocked" />
+         jinkslide:lockstate="unlocked" />
       <rect
          rx="23.430777"
          id="rect2555-6-5-4-9"
@@ -272,7 +272,7 @@
          y="109.67731"
          ry="23.430777"
          style="display:inline;fill:#c0c0c0;fill-opacity:1;stroke:#4b4b4b;stroke-width:4.42772;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         ns1:lockstate="unlocked" />
+         jinkslide:lockstate="unlocked" />
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
@@ -322,8 +322,8 @@
          style="display:inline"
          id="jinkslide-appear-0000"
          transform="matrix(1.0032434,0,0,1.0212632,80.147872,128.91486)"
-         ns1:element="core_effect_appear"
-         ns1:lockstate="unlocked">
+         jinkslide:element="core_effect_appear"
+         jinkslide:lockstate="unlocked">
         <rect
            rx="25"
            id="rect2555-6-5-43"
@@ -333,7 +333,7 @@
            y="98.757324"
            ry="25"
            style="fill:#c0c0c0;fill-opacity:1;stroke:#4b4b4b;stroke-width:3.55964;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           ns1:lockstate="unlocked" />
+           jinkslide:lockstate="unlocked" />
         <path
            sodipodi:type="star"
            style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4.44954;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -391,13 +391,13 @@
            x="890.69647"
            y="207.81158"
            id="text3281"
-           ns1:lockstate="unlocked"><tspan
+           jinkslide:lockstate="unlocked"><tspan
              sodipodi:role="line"
              id="tspan3283"
              x="890.69647"
              y="207.81158"
-             ns1:core_effect_appear="order"
-             ns1:lockstate="unlocked"
+             jinkslide:core_effect_appear="order"
+             jinkslide:lockstate="unlocked"
              style="font-size:39.5174px;line-height:1.25">1</tspan></text>
         <text
            xml:space="preserve"
@@ -423,7 +423,7 @@
              id="tspan3279-37-6"
              x="936.5697"
              y="239.61955"
-             ns1:version="version"
+             jinkslide:version="version"
              sodipodi:insensitive="true"
              style="font-size:16.0184px;line-height:1.25">2.0.0-alpha-1</tspan></text>
       </g>
@@ -431,8 +431,8 @@
          style="display:inline"
          id="jinkslide-disappear-0000"
          transform="translate(398.87589,134.31202)"
-         ns1:element="core_effect_disappear"
-         ns1:lockstate="unlocked">
+         jinkslide:element="core_effect_disappear"
+         jinkslide:lockstate="unlocked">
         <rect
            rx="25"
            id="rect2555-6-5-43-48"
@@ -442,7 +442,7 @@
            y="95.444153"
            ry="25"
            style="fill:#c0c0c0;fill-opacity:1;stroke:#4b4b4b;stroke-width:3.60351;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           ns1:lockstate="unlocked" />
+           jinkslide:lockstate="unlocked" />
         <path
            sodipodi:type="star"
            style="display:inline;fill:#ffffff;fill-opacity:0.570093;stroke:#000000;stroke-width:4.44954;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.44954, 8.89909;stroke-dashoffset:0;stroke-opacity:1"
@@ -500,13 +500,13 @@
            x="890.69647"
            y="207.81158"
            id="text3281-9"
-           ns1:lockstate="unlocked"><tspan
+           jinkslide:lockstate="unlocked"><tspan
              sodipodi:role="line"
              id="tspan3283-0"
              x="890.69647"
              y="207.81158"
-             ns1:core_effect_disappear="order"
-             ns1:lockstate="unlocked"
+             jinkslide:core_effect_disappear="order"
+             jinkslide:lockstate="unlocked"
              style="font-size:40px;line-height:1.25">1</tspan></text>
         <text
            xml:space="preserve"
@@ -532,7 +532,7 @@
              id="tspan3279-37-6-09"
              x="936.5697"
              y="239.61955"
-             ns1:version="version"
+             jinkslide:version="version"
              sodipodi:insensitive="true"
              style="font-size:16.0184px;line-height:1.25">2.0.0-alpha-1</tspan></text>
       </g>
@@ -547,7 +547,7 @@
            id="tspan3279-37-6-09-1-1-2"
            x="1355.8662"
            y="413.22476"
-           ns1:version="version"
+           jinkslide:version="version"
            sodipodi:insensitive="true"
            style="font-size:16.0184px;line-height:1.25">2.0.0-alpha-1</tspan></text>
     </g>
@@ -568,11 +568,11 @@
     <g
        id="jinkslide-video"
        style="display:inline"
-       ns1:video-src="./video.mp4"
-       ns1:video-controls="false"
-       ns1:video-muted="true"
-       ns1:video-autoplay="true"
-       ns1:video-loop="true"
+       jinkslide:video-src="./video.mp4"
+       jinkslide:video-controls="false"
+       jinkslide:video-muted="true"
+       jinkslide:video-autoplay="true"
+       jinkslide:video-loop="true"
        transform="translate(-1000,-100)">
       <rect
          style="display:inline;fill:#c0c0c0;fill-opacity:1;stroke:#333333;stroke-width:2;stroke-dasharray:none"
@@ -659,9 +659,9 @@
        id="jinkslide-bg-00001"
        style="display:inline"
        transform="translate(13.58631)"
-       ns1:background-setter="true">
+       jinkslide:background-setter="true">
       <rect
-         ns1:lockstate="unlocked"
+         jinkslide:lockstate="unlocked"
          style="display:inline;fill:#000000;fill-opacity:1;stroke:#4b4b4b;stroke-width:1.80156;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
          ry="8"
          y="-54.820038"

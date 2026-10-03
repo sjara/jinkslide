@@ -396,7 +396,7 @@ JinkSlide.prototype.setBackgroundColor = function()
 
 /** Private function to check for background-setter elements in a slide and apply the color.
  *
- *  The function looks for groups marked with ns1:background-setter="true" and uses the fill color
+ *  The function looks for groups marked with jinkslide:background-setter="true" and uses the fill color
  *  of the first rectangle in that group as the new background color.
  *
  *  @param slideElement the slide element to check
