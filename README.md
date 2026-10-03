@@ -31,8 +31,7 @@ To see the features in use, open `example.svg` in a browser (it needs
 
 | Key | Action |
 |---|---|
-| Right / Page Down | Next step (next effect, or next slide) |
-| Left / Page Up | Previous step |
+| Right / Left | Next step (next effect, or next slide) / previous step |
 | Down / Up | Next / previous slide, skipping the effects |
 | Home / End | First / last slide |
 | `i` | Toggle the slide index |
