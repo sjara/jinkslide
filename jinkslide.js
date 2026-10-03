@@ -20,8 +20,8 @@
 
 // Version information. Update with tools/bump_version.py, which also
 // stamps the version label in the SVG files.
-var JINKSLIDE_VERSION = "1.0.0";
-var JINKSLIDE_DATE = "2026-09-19";
+var JINKSLIDE_VERSION = "1.1.0";
+var JINKSLIDE_DATE = "2026-10-03";
 
 function Slide(groupElement, clipPathId, slideBackgroundId)
 {
