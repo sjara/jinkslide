@@ -13,7 +13,7 @@ after editing the .js files, with no build step. Use build_svg.py to
 inline everything back together for distribution.
 
 Usage:
-    tools/split_svg.py [SOURCE_SVG] [--dev-svg DEV_SVG] [--js-dir JS_DIR]
+    tools/split_svg.py SOURCE_SVG [--dev-svg DEV_SVG] [--js-dir JS_DIR]
 """
 
 import argparse
@@ -72,16 +72,15 @@ def split_svg(sourcePath, devSvgPath, jsDir, jsRelDir):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("source", nargs="?", default="jinkslide.svg",
-                         help="Combined SVG to split (default: jinkslide.svg)")
-    parser.add_argument("--dev-svg", default="jinkslide.svg",
-                         help="Output dev SVG path with external script refs (default: jinkslide.svg)")
+    parser.add_argument("source", help="Combined SVG to split")
+    parser.add_argument("--dev-svg", default=None,
+                         help="Output dev SVG path with external script refs (default: overwrite SOURCE_SVG)")
     parser.add_argument("--js-dir", default=".",
                          help="Directory to write extracted .js files into (default: project root)")
     args = parser.parse_args()
 
     sourcePath = Path(args.source)
-    devSvgPath = Path(args.dev_svg)
+    devSvgPath = Path(args.dev_svg) if args.dev_svg else sourcePath
     jsDir = Path(args.js_dir)
 
     if not sourcePath.exists():

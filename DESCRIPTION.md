@@ -1,6 +1,6 @@
-# Understanding jinkslide.svg
+# Understanding jinkslide
 
-**jinkslide.svg** is a sophisticated SVG-based slide presentation system that combines SVG markup with embedded JavaScript to create an interactive presentation that can be opened directly in a web browser. Here's how it works:
+**jinkslide** is a sophisticated SVG-based slide presentation system that combines SVG markup with embedded JavaScript to create an interactive presentation that can be opened directly in a web browser. Here's how it works:
 
 ## Core Architecture
 
@@ -56,14 +56,14 @@
 
 The JavaScript can live in two forms, and the tools in `tools/` convert between them:
 
-- **Dev SVG (split)**: `jinkslide.svg` loads the engine with `<script xlink:href="jinkslide.js">`. The JS is a normal file that can be edited with any editor, diffed cleanly in git, and tested by reloading the SVG in a browser. No build step is needed. This is the working form and what is kept in the repository.
+- **Dev SVG (split)**: the SVG (e.g., `template.svg`, the starting point for a new presentation) loads the engine with `<script xlink:href="jinkslide.js">`. The JS is a normal file that can be edited with any editor, diffed cleanly in git, and tested by reloading the SVG in a browser. No build step is needed. This is the working form and what is kept in the repository.
 - **Distribution SVG (merged)**: a single self-contained SVG with the JS inlined (and escaped) inside the `<script>` element, with no external dependencies apart from media files such as videos and sounds. This is the form to send to others.
 
 | Tool | Purpose |
 |------|---------|
-| `tools/build_svg.py [DEV_SVG] [--output OUT]` | Merge: inline `jinkslide.js` into the SVG (default output `jinkslide_dist.svg`) |
-| `tools/split_svg.py [SOURCE_SVG] [--dev-svg DEV] [--js-dir DIR]` | Split: extract inline scripts (identified by `ns1:scriptname`) to `.js` files and link them via `xlink:href` |
-| `tools/bump_version.py VERSION [--date D]` | Set the version and stamp the SVG label |
+| `tools/build_svg.py DEV_SVG [--output OUT]` | Merge: inline `jinkslide.js` into the SVG (default output `jinkslide_dist.svg`) |
+| `tools/split_svg.py SOURCE_SVG [--dev-svg DEV] [--js-dir DIR]` | Split: extract inline scripts (identified by `ns1:scriptname`) to `.js` files and link them via `xlink:href` |
+| `tools/bump_version.py VERSION [--date D]` | Set the version and stamp the label in every SVG in the project root that has one |
 
 Note that Inkscape does not run scripts, so it shows only the text stored in the SVG file. Keep this in mind for anything the JS generates at load time.
 

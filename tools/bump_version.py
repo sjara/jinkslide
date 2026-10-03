@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Set the jinkslide version in jinkslide.js and stamp the version label
-in jinkslide.svg (the element marked with ns1:role="version") so that
-the correct version is visible even in editors that do not run scripts.
+(the element marked with ns1:role="version") in every SVG in the project
+root that has one, so that the correct version is visible even in editors
+that do not run scripts.
 
 Usage:
     tools/bump_version.py VERSION [--date YYYY-MM-DD]
@@ -19,7 +20,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 JS_PATH = ROOT / "jinkslide.js"
-SVG_PATH = ROOT / "jinkslide.svg"
 
 VERSION_RE = re.compile(r'(var JINKSLIDE_VERSION = ")([^"]*)(";)')
 DATE_RE = re.compile(r'(var JINKSLIDE_DATE = ")([^"]*)(";)')
@@ -43,9 +43,11 @@ def main():
     args = parser.parse_args()
 
     jsText = JS_PATH.read_text()
-    svgText = SVG_PATH.read_text()
-    if not (VERSION_RE.search(jsText) and DATE_RE.search(jsText) and LABEL_RE.search(svgText)):
-        sys.exit("Could not find version fields in jinkslide.js / jinkslide.svg")
+    if not (VERSION_RE.search(jsText) and DATE_RE.search(jsText)):
+        sys.exit("Could not find version fields in jinkslide.js")
+    svgTexts = {svgPath: svgPath.read_text() for svgPath in sorted(ROOT.glob("*.svg"))}
+    svgTexts = {svgPath: svgText for svgPath, svgText in svgTexts.items()
+                if LABEL_RE.search(svgText)}
 
     current = VERSION_RE.search(jsText).group(2)
     if args.version in ("major", "minor", "patch"):
@@ -58,11 +60,15 @@ def main():
     jsText = VERSION_RE.sub(lambda match: match.group(1) + newVersion + match.group(3), jsText)
     jsText = DATE_RE.sub(lambda match: match.group(1) + args.date + match.group(3), jsText)
     label = f"v{newVersion} ({args.date})"
-    svgText = LABEL_RE.sub(lambda match: match.group(1) + label + match.group(2), svgText)
 
     JS_PATH.write_text(jsText)
-    SVG_PATH.write_text(svgText)
+    for svgPath, svgText in svgTexts.items():
+        svgPath.write_text(LABEL_RE.sub(lambda match: match.group(1) + label + match.group(2), svgText))
     print(f"{current} -> {newVersion} ({args.date})")
+    if svgTexts:
+        print("Stamped: " + ", ".join(svgPath.name for svgPath in svgTexts))
+    else:
+        print("warning: no SVG with a version label found in the project root", file=sys.stderr)
     print(f"Next: git commit -am 'Release v{newVersion}' && git tag v{newVersion}")
 
 

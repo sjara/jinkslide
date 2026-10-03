@@ -10,7 +10,7 @@ result as the element's content, and drops the xlink:href attribute so
 the output file has no external dependencies.
 
 Usage:
-    tools/build_svg.py [DEV_SVG] [--output OUTPUT_SVG]
+    tools/build_svg.py DEV_SVG [--output OUTPUT_SVG]
 """
 
 import argparse
@@ -18,12 +18,14 @@ import re
 import sys
 from pathlib import Path
 
-SCRIPT_TAG_RE = re.compile(r"<script\b([^>]*)>(.*?)</script>", re.DOTALL)
+# Matches both <script ...>...</script> and the self-closing <script ... />
+# form that Inkscape writes for scripts with no inline content.
+SCRIPT_TAG_RE = re.compile(r"<script\b([^>]*?)(?:/>|>(.*?)</script>)", re.DOTALL)
 HREF_RE = re.compile(r'\s*xlink:href="([^"]+)"')
 
 
 def escape_js(jsText):
-    # Mirrors the escaping already used throughout jinkslide.svg: only
+    # Mirrors the escaping already used for scripts inlined in an SVG: only
     # <, >, &, " need escaping; curly braces are left alone.
     return (
         jsText
@@ -41,7 +43,7 @@ def build_svg(devSvgPath, outputPath):
     scriptNamesUsed = []
 
     def replace_script(match):
-        attrs, existingContent = match.group(1), match.group(2)
+        attrs = match.group(1).rstrip()
         hrefMatch = HREF_RE.search(attrs)
         if not hrefMatch:
             # Already-inlined script (or one with no external ref); leave as-is.
@@ -65,8 +67,7 @@ def build_svg(devSvgPath, outputPath):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("dev_svg", nargs="?", default="jinkslide.svg",
-                         help="Dev SVG with xlink:href scripts (default: jinkslide.svg)")
+    parser.add_argument("dev_svg", help="Dev SVG with xlink:href scripts")
     parser.add_argument("--output", default="jinkslide_dist.svg",
                          help="Output consolidated SVG path (default: jinkslide_dist.svg)")
     args = parser.parse_args()
